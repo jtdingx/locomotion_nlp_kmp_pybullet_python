@@ -4,5 +4,6 @@ Build the pybullet simulation environment for legged robots motion planning and 
 
 The Pinocchio dynamic library is used for robot-computation
 
-NLP_step_locomotion: adjust step location and step timing, solved by SDP using MOSEK optimization tool
-KMP: natural leg trajectory generation
+NLP: adjust step location and step timing, solved by SDP using MOSEK optimization library
+
+KMP: natural leg trajectory generation by learning from demo.
