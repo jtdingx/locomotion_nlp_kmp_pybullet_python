@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="coman">
+  <!--
+  ROS urdf definition of the COMAN humanoid robot by Istituto Italiano di Tecnologia
+  
+  Author: Enrico Mingo
+  
+  This file groups files to use COMAN in GAZEBO
+  
+  -->
+  <xacro:include filename="$(find coman_urdf)/urdf/coman.urdf.xacro" />
+
+  <xacro:include filename="$(find coman_urdf)/urdf/gazebo/microstrain_3dmgx2_imu.gazebo.xacro" />
+
+  <xacro:include filename="$(find coman_urdf)/urdf/gazebo/coman.gazebo.xacro" />
+
+  <xacro:if value="${GAZEBO_COMAN_USES_XTION}">
+	<xacro:include filename="$(find coman_urdf)/urdf/gazebo/openni_kinect.gazebo.xacro" />
+  </xacro:if>
+
+  <xacro:if value="${GAZEBO_COMAN_USES_ROS_GRASPFIX}">
+	<xacro:include filename="$(find coman_urdf)/urdf/gazebo/grasp_fix_plugin.xacro" />
+  </xacro:if>
+
+<!-- YARP PLUGINS for GAZEBO SIMULATION -->
+  <xacro:if value="${GAZEBO_COMAN_USES_YARP}">
+       <xacro:include filename="$(find coman_urdf)/urdf/gazebo/yarp_control.gazebo.xacro" />
+  </xacro:if>
+
+
+  <xacro:if value="${GAZEBO_COMAN_USES_XBOTCORE}" >
+  	<xacro:include filename="$(find cogimon_urdf)/urdf/gazebo/xbot_control.gazebo.xacro" />
+  </xacro:if>
+
+  <xacro:include filename="$(find coman_urdf)/urdf/gazebo/force_torque.gazebo.xacro" />
+  
+  <!-- XBOT PLUGINS for GAZEBO SIMULATION -->
+  <xacro:if value="${GAZEBO_COMAN_USES_XBOT}">
+         <xacro:include filename="$(find coman_urdf)/urdf/gazebo/xbot_control.gazebo.xacro" />
+  </xacro:if>
+
+  <xacro:include filename="$(find coman_urdf)/urdf/gazebo/coman_materials.gazebo.xacro" />
+  <origin xyz="0.0 0.0 0.521" rpy="0 0 0" />
+</robot>
+
