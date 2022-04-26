@@ -50,6 +50,7 @@ class CLIK:
         # print("*************************************************************************")
         return q, J
 
+    #### following code is for optimization based IK solution
 # def position_error(self, q):
 #     # ### considering the orn and pos: expected status
 #     no = log(self.oMdes)
@@ -74,7 +75,7 @@ class CLIK:
 #
 #
 #
-#
+######## bfgs optimizer
 # def fbgs_opt(self,q):
 #
 #     xopt_bfgs = fmin_bfgs(position_error, q)
