@@ -51,34 +51,35 @@ class CLIK:
         return q, J
 
     #### following code is for optimization based IK solution
-# def position_error(self, q):
-#     # ### considering the orn and pos: expected status
-#     no = log(self.oMdes)
-#     log_oMdes_vec = no.vector
-#
-#     #### calculating the robot status:
-#     pin.forwardKinematics(self.robot.model, self.robot.data, q)
-#
-#     p = self.robot.data.oMi[self.index]
-#     nv = log(p)
-#     log_po_vec = nv.vector
-#
-#     err1 = np.sqrt((log_oMdes_vec[0] - log_po_vec[0]) ** 2 + (log_oMdes_vec[1] - log_po_vec[1]) ** 2 + (
-#             log_oMdes_vec[2] - log_po_vec[2]) ** 2 + (log_oMdes_vec[3] - log_po_vec[3]) ** 2 + (
-#                            log_oMdes_vec[4] - log_po_vec[4]) ** 2 + (log_oMdes_vec[5] - log_po_vec[5]) ** 2)
-#     err2 = np.sqrt((q[0]) ** 2 + (q[1]) ** 2 + (q[2]) ** 2 + (q[3]) ** 2 + (q[4]) ** 2 + (q[5]) ** 2 + (
-#         q[6]) ** 2)  ####base joint
-#     err = 100 * err1 + 20 * err2
-#     return err
-#
-#
-#
+ def position_error(self, q):
+     # ### considering the orn and pos: expected status
+     no = log(self.oMdes)
+     log_oMdes_vec = no.vector
+
+     #### calculating the robot status:
+     pin.forwardKinematics(self.robot.model, self.robot.data, q)
+
+     p = self.robot.data.oMi[self.index]
+     nv = log(p)
+     log_po_vec = nv.vector
+     
+     #### change the weights to see wha would happen
+     err1 = np.sqrt((log_oMdes_vec[0] - log_po_vec[0]) ** 2 + (log_oMdes_vec[1] - log_po_vec[1]) ** 2 + (
+             log_oMdes_vec[2] - log_po_vec[2]) ** 2 + (log_oMdes_vec[3] - log_po_vec[3]) ** 2 + (
+                            log_oMdes_vec[4] - log_po_vec[4]) ** 2 + (log_oMdes_vec[5] - log_po_vec[5]) ** 2)
+     err2 = np.sqrt((q[0]) ** 2 + (q[1]) ** 2 + (q[2]) ** 2 + (q[3]) ** 2 + (q[4]) ** 2 + (q[5]) ** 2 + (
+         q[6]) ** 2)  ####base joint
+     err = 100 * err1 + 20 * err2
+     return err
 #
 #
-######## bfgs optimizer
-# def fbgs_opt(self,q):
 #
-#     xopt_bfgs = fmin_bfgs(position_error, q)
-#     # print('*** Xopt in BFGS =', xopt_bfgs[7:13])
-#     return xopt_bfgs
+#
+#
+######## bfgs optimizer for nonlinear optimization
+ def fbgs_opt(self,q):
+
+     xopt_bfgs = fmin_bfgs(position_error, q)
+     # print('*** Xopt in BFGS =', xopt_bfgs[7:13])
+     return xopt_bfgs
 
