@@ -200,8 +200,8 @@ def main():
     ##########for robot with float-base: humanoids or ################################
     Freebase = True
 
-    # mesh_dir = '/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/talos'
     mesh_dirx = str(Path(__file__).parent.absolute())
+    print(mesh_dirx)
     mesh_dir = mesh_dirx + '/robot_description/models/'
 
     # You should change here to set up your own URDF file
@@ -223,6 +223,8 @@ def main():
             urdf_filename = mesh_dir + 'iit-coman-lowerbody-only/model.urdf'
 
     ### pinocchio load urdf
+    print(urdf_filename)
+    print(mesh_dir)
     if Freebase:
         robot = RobotWrapper.BuildFromURDF(urdf_filename, mesh_dir, pin.JointModelFreeFlyer())
         addFreeFlyerJointLimits(robot)

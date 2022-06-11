@@ -129,7 +129,6 @@ Full_body_simu = True
 ##########for robot with float-base: humanoids or ################################
 Freebase = True
 
-#mesh_dir = '/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/talos'
 mesh_dirx = str(Path(__file__).parent.absolute())
 mesh_dir = mesh_dirx + '/robot_description/models/'
 
