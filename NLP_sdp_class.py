@@ -887,31 +887,25 @@ class NLP:
   def solve_AAA_inv_x(self, t_plan):
       AAA = np.zeros([7, 7])
 
-      AAA[0, :] = np.array([6 * pow(t_plan[0], 5), 5 * pow(t_plan[0], 4), 4 * pow(t_plan[0], 3), 3 * pow(t_plan[0], 2),
-                            2 * pow(t_plan[0], 1), 1, 0])  ### initial velocity
+      AAA[0, :] = np.array([6 * pow(t_plan[0], 5), 5 * pow(t_plan[0], 4), 4 * pow(t_plan[0], 3), 3 * pow(t_plan[0], 2), 2 * pow(t_plan[0], 1), 1, 0])  ### initial velocity
 
       AAA[1, :] = np.array(
-          [30 * pow(t_plan[0], 4), 20 * pow(t_plan[0], 3), 12 * pow(t_plan[0], 2), 6 * pow(t_plan[0], 1), 2, 0,
-           0])  ### initial acce
+          [30 * pow(t_plan[0], 4), 20 * pow(t_plan[0], 3), 12 * pow(t_plan[0], 2), 6 * pow(t_plan[0], 1), 2, 0, 0])  ### initial acce
 
       AAA[2, :] = np.array(
-          [pow(t_plan[0], 6), pow(t_plan[0], 5), pow(t_plan[0], 4), pow(t_plan[0], 3), pow(t_plan[0], 2),
-           pow(t_plan[0], 1), 1])  ### initial pose
-
+          [pow(t_plan[0], 6), pow(t_plan[0], 5), pow(t_plan[0], 4), pow(t_plan[0], 3), pow(t_plan[0], 2), pow(t_plan[0], 1), 1])  ### initial pose
+      
+    #   print("t_plan",t_plan)
       AAA[3, :] = np.array(
-          [pow(t_plan[1], 6), pow(t_plan[1], 5), pow(t_plan[1], 4), pow(t_plan[1], 3), pow(t_plan[1], 2),
-           pow(t_plan[1], 1), 1])  ### middle position
+          [pow(t_plan[1], 6), pow(t_plan[1], 5), pow(t_plan[1], 4), pow(t_plan[1], 3), pow(t_plan[1], 2), pow(t_plan[1], 1), 1])  ### middle position
 
       AAA[4, :] = np.array(
-          [pow(t_plan[2], 6), pow(t_plan[2], 5), pow(t_plan[2], 4), pow(t_plan[2], 3), pow(t_plan[2], 2),
-           pow(t_plan[2], 1), 1])  ### ending position
+          [pow(t_plan[2], 6), pow(t_plan[2], 5), pow(t_plan[2], 4), pow(t_plan[2], 3), pow(t_plan[2], 2), pow(t_plan[2], 1), 1])  ### ending position
 
       AAA[5, :] = np.array(
-          [30 * pow(t_plan[2], 4), 20 * pow(t_plan[2], 3), 12 * pow(t_plan[2], 2), 6 * pow(t_plan[2], 1), 2, 0,
-           0])  ### ending acc
+          [30 * pow(t_plan[2], 4), 20 * pow(t_plan[2], 3), 12 * pow(t_plan[2], 2), 6 * pow(t_plan[2], 1), 2, 0, 0])  ### ending acc
 
-      AAA[6, :] = np.array([6 * pow(t_plan[2], 5), 5 * pow(t_plan[2], 4), 4 * pow(t_plan[2], 3), 3 * pow(t_plan[2], 2),
-                            2 * pow(t_plan[2], 1), 1, 0])  ### ending vel
+      AAA[6, :] = np.array([6 * pow(t_plan[2], 5), 5 * pow(t_plan[2], 4), 4 * pow(t_plan[2], 3), 3 * pow(t_plan[2], 2), 2 * pow(t_plan[2], 1), 1, 0])  ### ending vel
 
       AAA_inv = np.linalg.inv(AAA)
 
@@ -960,7 +954,7 @@ class NLP:
 
       #### planB: height variation duration whole period
       if (bjx1 >= 2):
-          t_plan = [0.0001, self.Ts[bjx1 - 1, :] / 2 + 0.001, self.Ts[bjx1 - 1, :] + 0.001]
+          t_plan = [0.0001, self.Ts[bjx1 - 1, 0] / 2 + 0.001, self.Ts[bjx1 - 1, 0] + 0.001]
 
           aaa_inv = self.solve_AAA_inv_x(t_plan)
 
@@ -979,9 +973,9 @@ class NLP:
                1])  ### desired pose
 
           comz_plan = np.array(
-              [[0], [0], [self.footz_ref[bjx1 - 2, :] + self.hcom],
-               [(self.footz_ref[bjx1 - 2, :] + self.footz_ref[bjx1 - 1, :]) * 0.5 + self.hcom],
-               [self.footz_ref[bjx1 - 1, :] + self.hcom], [0], [0]])
+              [[0], [0], [self.footz_ref[bjx1 - 2, 0] + self.hcom],
+               [(self.footz_ref[bjx1 - 2, 0] + self.footz_ref[bjx1 - 1, 0]) * 0.5 + self.hcom],
+               [self.footz_ref[bjx1 - 1, 0] + self.hcom], [0], [0]])
 
           comzvap = AAA_des.dot(aaa_inv.dot(comz_plan))
           self.comz[i, :] = comzvap[2, :]
