@@ -1,5 +1,6 @@
 
 # -*- encoding: UTF-8 -*-
+from Bezier import Bezier
 import numpy as np
 import math
 import string
@@ -44,9 +45,9 @@ class NLP:
 
     self.stepwidth = sy * np.ones([nstep, 1])
     self.stepwidth[0, 0] = self.stepwidth[0, 0] / 2
-    self.stepwidth[4, 0] = 0.18
-    self.stepwidth[6, 0] = 0.18
-    self.stepwidth[8, 0] = 0.18
+    # self.stepwidth[4, 0] = 0.18
+    # self.stepwidth[6, 0] = 0.18
+    # self.stepwidth[8, 0] = 0.18
 
     self.stepheight = sz * np.ones([nstep, 1])
     self.stepheight[0, 0] = 0
@@ -1033,7 +1034,7 @@ class NLP:
       return com_inte
 
   def kmp_foot_trajectory(self, walktime, dt_sample, j_index, rleg_traj_refx, lleg_traj_refx, inDim, outDim, kh, lamda,
-                          pvFlag):
+                          pvFlag,lift_height):
 
       rleg_traj_ref = copy.deepcopy(rleg_traj_refx)
       lleg_traj_ref = copy.deepcopy(lleg_traj_refx)
@@ -1041,7 +1042,7 @@ class NLP:
       col_num = rleg_traj_ref.shape[1]
       ### dt_sample ==self.dtx,  j_index = i (nlp_nao),  walktime = (real_time loop number)
       ### lift height for foot trajectory
-      lift_max = 0.04
+      lift_max = lift_height
 
       fooy_modeif = copy.deepcopy(self.footy_ref[0, 0])
       self.footy_ref[0, 0] = copy.deepcopy(self.footy_ref[2, 0])
@@ -1279,6 +1280,158 @@ class NLP:
       self.footy_ref[0, 0] = copy.deepcopy(fooy_modeif)
 
       return Rfpos, Lfpos
+
+
+########### comparison with KMP: 
+  def Bezier_foot_trajectory(self, walktime, dt_sample, j_index,lift_height):
+      ### dt_sample ==self.dtx,  j_index = i (nlp_nao),  walktime = (real_time loop number)
+      ### lift height for foot trajectory
+      lift_max = lift_height
+
+      fooy_modeif = copy.deepcopy(self.footy_ref[0, 0])
+      self.footy_ref[0, 0] = copy.deepcopy(self.footy_ref[2, 0])
+
+      td = 0.2 * self.Ts
+      bjx1 = self.index_find(j_index + 1, self.Tx, 0)
+      t_des = (walktime + 2) * dt_sample - self.Tx[bjx1 - 1, 0] - td[bjx1 - 2, 0]/2  ####elapsed time
+
+      Rfpos = np.zeros([3, 1])
+      Lfpos = np.zeros([3, 1])
+
+      Rfpos[1, 0] = -abs(self.footy_offline[3, 0])
+      Lfpos[1, 0] = abs(self.footy_offline[3, 0])
+
+      if (bjx1 >= 2):
+          if ((bjx1 % 2) == 0):  ##singular number: left support
+              self.lfoot_kmp[0, 0] = self.footx_ref[bjx1 - 1, 0]
+              self.lfoot_kmp[1, 0] = self.footy_ref[bjx1 - 1, 0]
+              self.lfoot_kmp[2, 0] = self.footz_ref[bjx1 - 1, 0]
+              self.lfootv_kmp[0, 0] = 0.0
+              self.lfootv_kmp[1, 0] = 0.0
+              self.lfootv_kmp[2, 0] = 0.0
+
+              if (t_des <= dt_sample):  ### double support phase
+                self.rfoot_kmp[0, 0] = self.footx_ref[bjx1 - 2, 0]
+                self.rfoot_kmp[1, 0] = self.footy_ref[bjx1 - 2, 0]
+                self.rfoot_kmp[2, 0] = self.footz_ref[bjx1 - 2, 0]
+                self.rfootv_kmp[0, 0] = 0.0
+                self.rfootv_kmp[1, 0] = 0.0
+                self.rfootv_kmp[2, 0] = 0.0
+              else:
+                if (t_des >= self.Ts[bjx1-1, 0] - td[bjx1-1, 0]/2 - td[bjx1-2, 0]/2 - dt_sample):  ### double support phase
+                    self.rfoot_kmp[0, 0] = self.footx_ref[bjx1, 0]
+                    self.rfoot_kmp[1, 0] = self.footy_ref[bjx1, 0]
+                    self.rfoot_kmp[2, 0] = self.footz_ref[bjx1, 0]
+                    self.rfootv_kmp[0, 0] = 0.0
+                    self.rfootv_kmp[1, 0] = 0.0
+                    self.rfootv_kmp[2, 0] = 0.0
+                else: ####ssp
+                    #### add via_point1#############
+                    point1 = [self.footx_ref[bjx1 - 2, 0], self.footy_ref[bjx1 - 2, 0], self.footz_ref[bjx1 - 2, 0]]
+                    point2 = [(self.footx_ref[bjx1 - 1, 0]+self.footx_ref[bjx1-2, 0])/2, (2*self.footy_ref[bjx1 - 2, 0]+self.footy_ref[bjx1, 0])/3, np.max(self.footz_ref[bjx1 - 2, 0]+self.footz_ref[bjx1, 0])+lift_max/2]
+                    point21 = [(self.footx_ref[bjx1 - 1, 0]), (self.footy_ref[bjx1 - 2, 0]+self.footy_ref[bjx1, 0])/2, np.max(self.footz_ref[bjx1 - 2, 0]+self.footz_ref[bjx1, 0])+lift_max]
+                    point3 = [(self.footx_ref[bjx1 - 1, 0]+self.footx_ref[bjx1, 0])/2, (self.footy_ref[bjx1 - 2, 0]+2*self.footy_ref[bjx1, 0])/3, np.max(self.footz_ref[bjx1 - 2, 0]+self.footz_ref[bjx1, 0])+lift_max/2]
+                    point4 = [self.footx_ref[bjx1, 0], self.footy_ref[bjx1, 0], self.footz_ref[bjx1, 0]]
+                    # point3 = point4
+                    
+
+                    test = np.array([point1, point2, point21, point3, point4])  
+                    t_points = np.arange(0, self.Ts[bjx1-1, 0] - td[bjx1-2, 0]/2 - td[bjx1-1, 0]/2, dt_sample)
+                    t_points = t_points/t_points[-1]
+                    test_set_1 = Bezier.Curve(t_points, test)
+                    bjx1xxx = int(np.round(t_des/dt_sample))-1
+
+                    # print("t_des:",t_des)
+                    # if(bjx1xxx % 10==0):
+                    #     print("test:",test)
+                    #     print("t_des:",t_des)
+                    #     print("t_period_end:",self.Ts[bjx1-1, 0] - td[bjx1-2, 0]/2 - td[bjx1-1, 0]/2+dt_sample)
+
+                    self.rfoot_kmp[0, 0] = test_set_1[bjx1xxx,0]
+                    self.rfoot_kmp[1, 0] = test_set_1[bjx1xxx,1]
+                    self.rfoot_kmp[2, 0] = test_set_1[bjx1xxx,2]
+                    self.rfootv_kmp[0, 0] = 0
+                    self.rfootv_kmp[1, 0] = 0
+                    self.rfootv_kmp[2, 0] = 0
+          else:  ##left support
+              self.rfoot_kmp[0, 0] = self.footx_ref[bjx1 - 1, 0]
+              self.rfoot_kmp[1, 0] = self.footy_ref[bjx1 - 1, 0]
+              self.rfoot_kmp[2, 0] = self.footz_ref[bjx1 - 1, 0]
+              self.rfootv_kmp[0, 0] = 0.0
+              self.rfootv_kmp[1, 0] = 0.0
+              self.rfootv_kmp[2, 0] = 0.0
+
+              if (t_des <= dt_sample):  ### double support phase
+                  self.lfoot_kmp[0, 0] = self.footx_ref[bjx1 - 2, 0]
+                  self.lfoot_kmp[1, 0] = self.footy_ref[bjx1 - 2, 0]
+                  self.lfoot_kmp[2, 0] = self.footz_ref[bjx1 - 2, 0]
+                  self.lfootv_kmp[0, 0] = 0.0
+                  self.lfootv_kmp[1, 0] = 0.0
+                  self.lfootv_kmp[2, 0] = 0.0
+              else:  
+                if (t_des >= self.Ts[bjx1-1, 0] - td[bjx1-1, 0]/2 - td[bjx1-2, 0]/2 - dt_sample):  ### double support phase
+                    self.lfoot_kmp[0, 0] = self.footx_ref[bjx1, 0]
+                    self.lfoot_kmp[1, 0] = self.footy_ref[bjx1, 0]
+                    self.lfoot_kmp[2, 0] = self.footz_ref[bjx1, 0]
+                    self.lfootv_kmp[0, 0] = 0.0
+                    self.lfootv_kmp[1, 0] = 0.0
+                    self.lfootv_kmp[2, 0] = 0.0
+                else: ####ssp
+                    #### add via_point1#############
+                    point1 = [self.footx_ref[bjx1 - 2, 0], self.footy_ref[bjx1 - 2, 0], self.footz_ref[bjx1 - 2, 0]]
+                    point2 = [(self.footx_ref[bjx1 - 1, 0]+self.footx_ref[bjx1-2, 0])/2, (2*self.footy_ref[bjx1 - 2, 0]+self.footy_ref[bjx1, 0])/3, np.max(self.footz_ref[bjx1 - 2, 0]+self.footz_ref[bjx1, 0])+lift_max/2]
+                    point21 = [(self.footx_ref[bjx1 - 1, 0]), (self.footy_ref[bjx1 - 2, 0]+self.footy_ref[bjx1, 0])/2, np.max(self.footz_ref[bjx1 - 2, 0]+self.footz_ref[bjx1, 0])+lift_max]
+                    point3 = [(self.footx_ref[bjx1 - 1, 0]+self.footx_ref[bjx1, 0])/2, (self.footy_ref[bjx1 - 2, 0]+2*self.footy_ref[bjx1, 0])/3, np.max(self.footz_ref[bjx1 - 2, 0]+self.footz_ref[bjx1, 0])+lift_max/2]
+                    point4 = [self.footx_ref[bjx1, 0], self.footy_ref[bjx1, 0], self.footz_ref[bjx1, 0]]
+                    # point3 = point4
+
+                    test1 = np.array([point1, point2, point21, point3, point4])  
+                    t_points = np.arange(0, self.Ts[bjx1-1, 0] - td[bjx1-2, 0]/2 - td[bjx1-1, 0]/2, dt_sample)
+                    t_points = t_points/t_points[-1]
+                    test_set_2 = Bezier.Curve(t_points, test1)
+                    bjx1xxx = int(np.round(t_des/dt_sample))-1
+                    # if(bjx1xxx % 10==0):
+                    #     # print("test:",test)
+                    #     print("t_des:",t_des)
+                    #     print("t_period_end:",self.Ts[bjx1-1, 0] - td[bjx1-2, 0]/2 - td[bjx1-1, 0]/2+dt_sample)
+
+
+                    self.lfoot_kmp[0, 0] = test_set_2[bjx1xxx,0]
+                    self.lfoot_kmp[1, 0] = test_set_2[bjx1xxx,1]
+                    self.lfoot_kmp[2, 0] = test_set_2[bjx1xxx,2]
+                    self.lfootv_kmp[0, 0] = 0
+                    self.lfootv_kmp[1, 0] = 0
+                    self.lfootv_kmp[2, 0] = 0
+                  # print("l_kmp_posvel:", l_kmp_posvel)
+          Rfpos = copy.deepcopy(self.rfoot_kmp)
+          Lfpos = copy.deepcopy(self.lfoot_kmp)
+      else:
+          Rfpos[1, 0] = -abs(self.footy_offline[3, 0])
+          Lfpos[1, 0] = abs(self.footy_offline[3, 0])
+
+      self.footy_ref[0, 0] = copy.deepcopy(fooy_modeif)
+
+      return Rfpos, Lfpos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # def read_data_offline(FilePathName, row_num):
 #     Input = open(FilePathName, 'r')

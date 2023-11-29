@@ -91,13 +91,13 @@ The coordinate frame called base_link is rigidly attached to the robot root body
       <origin rpy="0 0 3.14159265359" xyz="0 0 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="Waist_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Waist.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Waist.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0 0 -0.52"/>
       <geometry name="Waist_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Waist.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Waist.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -131,13 +131,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.023 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.023 -0.52"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg0.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -151,13 +151,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RThighUpLeg_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.52"/>
       <geometry name="RThighUpLeg_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg1.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -171,13 +171,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.4176"/>
       <material name="dark_grey"/>
       <geometry name="RThighLowLeg_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.4176"/>
       <geometry name="RThighLowLeg_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg2.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -191,13 +191,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.2942"/>
       <material name="dark_grey"/>
       <geometry name="RLowLeg_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.2942"/>
       <geometry name="RLowLeg_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg3.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -211,13 +211,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="RFootmot_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <geometry name="RFootmot_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg4.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -231,13 +231,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 -3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="RFoot_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 -3.14159265359" xyz="0.0 0.0726 -0.0932"/>
       <geometry name="RFoot_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/RoundFoot.STL" scale="0.03937 0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -252,13 +252,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.023 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="RHipMot_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.023 -0.52"/>
       <geometry name="RHipMot_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg0.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -272,13 +272,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.52"/>
       <material name="dark_grey"/>
       <geometry name="LThighUpLeg_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.52"/>
       <geometry name="LThighUpLeg_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg1.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -292,13 +292,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.4176"/>
       <material name="dark_grey"/>
       <geometry name="LThighLowLeg_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.4176"/>
       <geometry name="LThighLowLeg_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg2.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -312,13 +312,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.2942"/>
       <material name="dark_grey"/>
       <geometry name="LLowLeg_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.2942"/>
       <geometry name="LLowLeg_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg3.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -332,13 +332,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="LFootmot_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <geometry name="LFootmot_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/Leg4.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>
@@ -352,13 +352,13 @@ and to define the end effectors of the robot -->
       <origin rpy="0 0 -3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <material name="dark_grey"/>
       <geometry name="LFoot_visual">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 -3.14159265359" xyz="0.0 -0.0726 -0.0932"/>
       <geometry name="LFoot_collision">
-        <mesh filename="/home/jiatao/anaconda3/envs/nameOfEnv/pybullet_gym/pybullet_robots/locomotion_nmpc_pybullet_python/robot_description/models//iit-coman-no-forearms/meshes/simple/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
+        <mesh filename="package://iit-coman/meshes/simple/RoundFoot.STL" scale="0.03937 -0.03937 0.03937"/>
       </geometry>
     </collision>
   </link>

@@ -187,11 +187,11 @@ class Gait_Controller:
     def CoM_Body_pd(self,dt,com_ref_det,com_feedback_det,com_ref_det_pre,com_feedback_det_pre,angle_ref_det,angle_feedback_det,angle_ref_det_pre,angle_feedback_det_pre):
         det_com = [0,0,0]
         det_body_angle = [0, 0, 0]
-        det_com[0] = 0.2* (com_ref_det[0]-com_feedback_det[0]) +  0.00001* (com_ref_det[0]-com_feedback_det[0] - (com_ref_det_pre[0]-com_feedback_det_pre[0]))/dt
-        det_com[1] = 0.05* (com_ref_det[1]-com_feedback_det[1]) +  0.00001* (com_ref_det[1]-com_feedback_det[1] - (com_ref_det_pre[1]-com_feedback_det_pre[1]))/dt
-        det_com[2] = 0.1* (com_ref_det[2]-com_feedback_det[2]) +  0.00001* (com_ref_det[2]-com_feedback_det[2] - (com_ref_det_pre[2]-com_feedback_det_pre[2]))/dt
+        det_com[0] = 0.1* (com_ref_det[0]-com_feedback_det[0]) +  0.00001* (com_ref_det[0]-com_feedback_det[0] - (com_ref_det_pre[0]-com_feedback_det_pre[0]))/dt
+        det_com[1] = 0.01* (com_ref_det[1]-com_feedback_det[1]) +  0.00001* (com_ref_det[1]-com_feedback_det[1] - (com_ref_det_pre[1]-com_feedback_det_pre[1]))/dt
+        det_com[2] = 0.01* (com_ref_det[2]-com_feedback_det[2]) +  0.00001* (com_ref_det[2]-com_feedback_det[2] - (com_ref_det_pre[2]-com_feedback_det_pre[2]))/dt
         det_body_angle[0] = 0.01* (angle_ref_det[0]-angle_feedback_det[0]) +  0.00001* (angle_ref_det[0]-angle_feedback_det[0] - (angle_ref_det_pre[0]-angle_feedback_det_pre[0]))/dt
-        det_body_angle[1] = 0.1* (angle_ref_det[1]-angle_feedback_det[1]) +  0.00001* (angle_ref_det[1]-angle_feedback_det[1] - (angle_ref_det_pre[1]-angle_feedback_det_pre[1]))/dt
+        det_body_angle[1] = 0.01* (angle_ref_det[1]-angle_feedback_det[1]) +  0.00001* (angle_ref_det[1]-angle_feedback_det[1] - (angle_ref_det_pre[1]-angle_feedback_det_pre[1]))/dt
         det_body_angle[2] = 0.01* (angle_ref_det[2]-angle_feedback_det[2]) +  0.00001* (angle_ref_det[2]-angle_feedback_det[2] - (angle_ref_det_pre[2]-angle_feedback_det_pre[2]))/dt
 
         return det_com, det_body_angle

@@ -44,7 +44,7 @@ import mosek
 from functools import wraps
 from KMP_class import KMP
 from NLP_sdp_class import NLP
-
+import matplotlib.pyplot as plt
 
 
 def fn_timer(function):
@@ -200,6 +200,9 @@ def main():
     ##########for robot with float-base: humanoids or ################################
     Freebase = True
 
+    ######### Coman: with/without forearm #####
+    Forearm = False
+
     mesh_dirx = str(Path(__file__).parent.absolute())
     print(mesh_dirx)
     mesh_dir = mesh_dirx + '/robot_description/models/'
@@ -211,8 +214,11 @@ def main():
         elif ((robotname == 'Cogimon')):
             urdf_filename = mesh_dir + 'iit-cogimon/model.urdf'
         else:
-            urdf_filename = mesh_dir + 'iit-coman/model.urdf'
-            # urdf_filename = mesh_dir + 'iit-coman-no-forearms/model_jiatao.urdf'
+            if Forearm:
+                urdf_filename = mesh_dir + 'iit-coman/model.urdf'
+            else:
+                # urdf_filename = mesh_dir + 'iit-coman-no-forearms/model_jiatao.urdf'
+                urdf_filename = mesh_dir + 'iit-coman-no-forearms/model.urdf'
 
     else:
         if (robotname == 'Talos'):
@@ -270,11 +276,11 @@ def main():
     pin.forwardKinematics(robot.model, robot.data, q)
     pr = robot.data.oMi[idr[5]].translation
     pl = robot.data.oMi[idl[5]].translation
-    # print("right ankle joint pos:", pr)
-    # print("left ankle joint pos:", pl)
-    # print(" base_position:", robot.model.jointPlacements[1])
+    print("right ankle joint pos:", pr)
+    print("left ankle joint pos:", pl)
+    print(" base_position:", robot.model.jointPlacements[1])
     ############################### pinocchio load finish !!!!!!!!!!!!!!!!!!!!!!!!!!! #####################################################
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!pinocchio load urdf finishing!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!pinocchio load urdf done!!!!!!!!!!!!!!!!!!!!!!!!!!")
     #################################################################################################################
 
     demo_filename = mesh_dirx + '/referdata_swing_mod.txt'
@@ -283,6 +289,7 @@ def main():
     traj_filename = mesh_dirx + '/robot_traj.txt'
     angle_filename = mesh_dirx + '/robot_joint_angle.txt'
     state_filename = mesh_dirx + '/robot_state.txt'
+    ###################################################-----------------------------###########################
     ################################################### pybullet simulation loading ###########################
     ### intial pose for talos in pybullet
     ###  by default, stepsimulation() is used
@@ -322,39 +329,40 @@ def main():
             Homing_pose[-3] = 0.36913
             Homing_pose[-2] = -0.18599
         else:
-            ### upper arm: for whole-body coman
-            Homing_pose[3] = -0.2
-            Homing_pose[4] = -0.1
-            Homing_pose[5] = 0
-            Homing_pose[6] = -0.6
-            Homing_pose[10] = -0.2
-            Homing_pose[11] = 0.1
-            Homing_pose[12] = 0
-            Homing_pose[13] = -0.6
-            ## lower leg
-            Homing_pose[-12] = -0.48444
-            Homing_pose[-9] = 0.96913
-            Homing_pose[-7] = -0.48599
-            Homing_pose[-6] = -0.48444
-            Homing_pose[-3] = 0.96913
-            Homing_pose[-1] = -0.48599
-
-            # ### upper arm: for coman with forearm
-            # Homing_pose[3] = -0.2
-            # Homing_pose[4] = -0.1
-            # Homing_pose[5] = 0
-            # Homing_pose[6] = -0.6
-            # Homing_pose[7] = -0.2
-            # Homing_pose[8] = 0.1
-            # Homing_pose[9] = 0
-            # Homing_pose[10] = -0.6
-            # ## lower leg
-            # Homing_pose[-12] = -0.48444
-            # Homing_pose[-9] = 0.96913
-            # Homing_pose[-7] = -0.48599
-            # Homing_pose[-6] = -0.48444
-            # Homing_pose[-3] = 0.96913
-            # Homing_pose[-1] = -0.48599
+            if(Forearm):
+                ### upper arm: for whole-body coman
+                Homing_pose[3] = -0.2
+                Homing_pose[4] = -0.1
+                Homing_pose[5] = 0
+                Homing_pose[6] = -0.6
+                Homing_pose[10] = -0.2
+                Homing_pose[11] = 0.1
+                Homing_pose[12] = 0
+                Homing_pose[13] = -0.6
+                ## lower leg
+                Homing_pose[-12] = -0.48444
+                Homing_pose[-9] = 0.96913
+                Homing_pose[-7] = -0.48599
+                Homing_pose[-6] = -0.48444
+                Homing_pose[-3] = 0.96913
+                Homing_pose[-1] = -0.48599
+            else:
+                ### upper arm: for coman without forearm
+                Homing_pose[3] = -0.2
+                Homing_pose[4] = -0.1
+                Homing_pose[5] = 0
+                Homing_pose[6] = -0.6
+                Homing_pose[7] = -0.2
+                Homing_pose[8] = 0.1
+                Homing_pose[9] = 0
+                Homing_pose[10] = -0.6                
+                ## lower leg
+                Homing_pose[-12] = -0.48444
+                Homing_pose[-9] = 0.96913
+                Homing_pose[-7] = -0.48599
+                Homing_pose[-6] = -0.48444
+                Homing_pose[-3] = 0.96913
+                Homing_pose[-1] = -0.48599
 
     else:
         if (robotname == 'Talos'):
@@ -380,7 +388,7 @@ def main():
     useRealTimeSimulation = 0
     pybullet.setRealTimeSimulation(useRealTimeSimulation)
 
-    ############################## enable ankle pressure sensoring
+    ############################## enable ankle pressure sensory
     full_joint_number = urobtx.getNumJoints()
     rig_legid = full_joint_number - 2
     left_legid = full_joint_number - 9
@@ -388,7 +396,7 @@ def main():
     pybullet.enableJointForceTorqueSensor(bodyUniqueId=robotidx, jointIndex=left_legid, enableSensor=1)
 
     #####################################################################################################33
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!pybullet load environment finishing!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("!!!!!!!!!!!!!!!!!pybullet load environment done!!!!!!!!!!!!!!!!!!!!!!!!!!")
     #####################################################################################################33
 
     ##### Gait_Controller
@@ -409,17 +417,17 @@ def main():
     left_sole_linkid = 36
     right_sole_linkid = 42
     #####################################################################################################33
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Controller setup finishing!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    #####################################################################################################33
+    print("!!!!!!!!!!!!!!!!!!!!!!!Controller setup done!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    ############################ step parameters -----------------#################################################33
     nstep = 20
     dt_sample = dt
-    dt_nlp = 0.05
-    hcomx = 0.5245
+    dt_nlp = 0.025
+    hcomx = 0.46 #0.5245
     sx = 0.1
     sy = 0.1452
     sz = 0
     st = 0.599
-    # footz_det = 0.094
+    lift_height = 0.06
     falling_flag = 0
 
 
@@ -441,13 +449,14 @@ def main():
     print(com_fo_nlp.Nsum1)
     outx = np.zeros([com_fo_nlp.Nsum, 12])
     RLfoot_com_pos = np.zeros([9, com_fo_nlp.Nsum1])
+    t_long = np.arange(0,com_fo_nlp.Nsum1*dt,dt)
 
     t_n = int(2 * np.round(com_fo_nlp.Ts[0, 0] / dt_sample))
     #####################################################################################################33
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NLP-KMP-CLASS setup finishing!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NLP-KMP-CLASS setup done!!!!!!!!!!!!!!!!!!!!!!!!!!")
     #####################################################################################################33
 
-    FileLength = com_fo_nlp.Nsum1 - t_n
+    FileLength = com_fo_nlp.Nsum1
 
     traj_opt = np.zeros([FileLength, 12])  ### trajectory reference generated by gait planner
     joint_opt = np.zeros([FileLength, num_joint])  #### joint angle by IK
@@ -468,6 +477,9 @@ def main():
     angle_ref_det_pre = [0, 0, 0]
     angle_feedback_det_pre = [0, 0, 0]
 
+
+
+    sim_env.resetCamera() 
     ############################################################################################# main loop for robot gait generation and control ##########################################
     while i < FileLength:
         if (useRealTimeSimulation):
@@ -524,17 +536,6 @@ def main():
             gcom_m, right_sole_pos, left_sole_pos, base_pos_m, base_angle_m, right_ankle_force, left_ankle_force, gcop_m, support_flag, dcm_pos_m, com_vel_m, links_pos, links_vel, links_acc = \
                 Controller_ver.state_estimation(i, dt, support_flag, links_pos_prev, links_vel_prev, gcom_pre)
 
-            state_feedback[i, 0:3] = gcom_m
-            state_feedback[i, 3:6] = right_sole_pos
-            state_feedback[i, 6:9] = left_sole_pos
-            state_feedback[i, 9:15] = right_ankle_force
-            state_feedback[i, 15:21] = left_ankle_force
-            state_feedback[i, 21:24] = gcop_m
-            state_feedback[i, 24:27] = dcm_pos_m
-            state_feedback[i, 27:30] = com_vel_m
-            state_feedback[i, 30:33] = base_pos_m
-            state_feedback[i, 33:36] = base_angle_m
-
             links_pos_prev = links_pos
             links_vel_prev = links_vel
             gcom_pre = gcom_m
@@ -545,23 +546,14 @@ def main():
             gcom_m, right_sole_pos, left_sole_pos, base_pos_m, base_angle_m, right_ankle_force, left_ankle_force, gcop_m, support_flag, dcm_pos_m, com_vel_m, links_pos, links_vel, links_acc = \
                 Controller_ver.state_estimation(i, dt, support_flag, links_pos_prev, links_vel_prev, gcom_pre)
 
-            state_feedback[i, 0:3] = gcom_m
-            state_feedback[i, 3:6] = right_sole_pos
-            state_feedback[i, 6:9] = left_sole_pos
-            state_feedback[i, 9:15] = right_ankle_force
-            state_feedback[i, 15:21] = left_ankle_force
-            state_feedback[i, 21:24] = gcop_m
-            state_feedback[i, 24:27] = dcm_pos_m
-            state_feedback[i, 27:30] = com_vel_m
-            state_feedback[i, 30:33] = base_pos_m
-            state_feedback[i, 33:36] = base_angle_m
-            # print('base_link_position:',base_pos_m)
-            # print('right_leg_sole_position:', right_sole_pos)
-            # print('left_leg_sole_position:', left_sole_pos)
+
 
             links_pos_prev = links_pos
             links_vel_prev = links_vel
             gcom_pre = gcom_m
+
+
+
 
             if (((abs(base_angle_m[0]) >= 30 * math.pi / 180) or (
                     abs(base_angle_m[1]) >= 30 * math.pi / 180)) and (falling_flag<0.5)):  ### falling down
@@ -572,6 +564,7 @@ def main():
                 np.savetxt(nlp_traj_filename, outx, fmt='%s', newline='\n')
                 np.savetxt(kmp_traj_filename, RLfoot_com_pos, fmt='%s', newline='\n')
                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Robot is falling, save data!!!!!!!!!!!!!!!!!!!!!!!!11")
+
 
             ######## reference trajectory generation #############################
             if Freebase: #routine1: change the base position and orientation for pinocchio IK: time-cost process due to the redundant freedom
@@ -584,12 +577,29 @@ def main():
                 oMdesl = pin.SE3(np.eye(3), des_pl)
                 des_pr = np.array(pr_homing_fix)
                 oMdesr = pin.SE3(np.eye(3), des_pr)
-                # if (t-t_homing<=0.01):
-                #     print("right_foot_pose_fix:", pr_homing_fix)
-                #     print("left_foot_pose_fix:",pl_homing_fix)
-                #     print("base_home_fix:", base_home_fix)
-                ################################################### NMPC gait generation #####################################################
-                j = i + 1- (int)(round(t_homing/dt))
+                if (t-t_homing<=0.01):
+                    print("right_foot_pose_fix:", pr_homing_fix)
+                    print("left_foot_pose_fix:",pl_homing_fix)
+                    print("base_home_fix:", base_home_fix)
+                
+
+                j = i + 1- (int)(round(t_homing/dt)) #### current j-th step in the low-level control
+                state_feedback[j, 0:3] = gcom_m
+                state_feedback[j, 3:6] = right_sole_pos
+                state_feedback[j, 6:9] = left_sole_pos
+                state_feedback[j, 9:15] = right_ankle_force
+                state_feedback[j, 15:21] = left_ankle_force
+                state_feedback[j, 21:24] = gcop_m
+                state_feedback[j, 24:27] = dcm_pos_m
+                state_feedback[j, 27:30] = com_vel_m
+                state_feedback[j, 30:33] = base_pos_m
+                state_feedback[j, 33:36] = base_angle_m
+                # print('base_link_position:',base_pos_m)
+                # print('right_leg_sole_position:', right_sole_pos)
+                # print('left_leg_sole_position:', left_sole_pos)
+
+
+                #############---------------------# MPC gait --------------------------########################
                 # cpptest = "/home/jiatao/Dropbox/nmpc_pybullet/build/src/MPC_WALK.exe"  # in linux without suffix .exe
                 # donser = run_nmpc_external_ext(j,cpptest)
                 #
@@ -608,33 +618,37 @@ def main():
                 # if (i<=1):
                 #     com_ref_base = des_base
                 #     com_feedback_base = gcom_m
-                ################################################### NLP+KMP gait generation #####################################################
+                # # des_base_ori = donser[3:6]/10
+                # # xxx = Controller_ver.RotMatrixfromEuler(des_base_ori)
+                # # robot.model.jointPlacements[1] = pin.SE3(xxx, des_base)                
+                
+                ##----------------Mosek NLP gait generation --------------------###################
                 j_index = int(np.floor(
                     (j) / (com_fo_nlp.dt / com_fo_nlp.dtx)))  ####walking time fall into a specific optmization loop
                 if ((j_index >= 1) and (abs(j * com_fo_nlp.dtx - j_index * com_fo_nlp.dt) <= 0.8 * dt_sample)):
                     res_outx = com_fo_nlp.nlp_nao(j_index)
                     outx[j_index - 1, :] = res_outx
 
-                rfoot_p, lfoot_p = com_fo_nlp.kmp_foot_trajectory(j, dt_sample, j_index, rleg_traj_refx, lleg_traj_refx,
-                                                                  inDim, outDim, kh, lamda, pvFlag)
+
+                # ##------ kMP based swing leg trajectory -----######### 
+                # rfoot_p, lfoot_p = com_fo_nlp.kmp_foot_trajectory(j, dt_sample, j_index, rleg_traj_refx, lleg_traj_refx,
+                #                                                   inDim, outDim, kh, lamda, pvFlag,lift_height)
+
+                ##------ kMP based swing leg trajectory -----######### 
+                rfoot_p, lfoot_p = com_fo_nlp.Bezier_foot_trajectory(j, dt_sample, j_index, lift_height)
+
                 RLfoot_com_pos[0:3, j - 1] = copy.deepcopy(rfoot_p[0:3, 0])
                 RLfoot_com_pos[3:6, j - 1] = copy.deepcopy(lfoot_p[0:3, 0])
 
                 com_intex = com_fo_nlp.XGetSolution_CoM_position(j, dt_sample, j_index)
                 RLfoot_com_pos[6:9, j - 1] = copy.deepcopy(com_intex[0:3, 0])
 
-                #### modified
-                # base_homing_offset = [0,0,hcomx] - base_home_fix
-                # rfoot_homing_offset = [0,-0.725,0] - pr_homing_fix
-                # lfoot_homing_offset = [0,-0.725,0] - pl_homing_fix
-
+                #### modified Catesian position for body and leg        
                 des_base = copy.deepcopy(com_intex[0:3, 0])
                 des_base[0] = copy.deepcopy((-com_intex[0, 0]- 0 + base_home_fix[0]))
                 des_base[1] = copy.deepcopy((com_intex[1, 0]- 0 + base_home_fix[1]))
                 des_base[2] = copy.deepcopy((com_intex[2, 0]- hcomx + base_home_fix[2]))
-                # # des_base_ori = donser[3:6]/10
-                # # xxx = Controller_ver.RotMatrixfromEuler(des_base_ori)
-                # # robot.model.jointPlacements[1] = pin.SE3(xxx, des_base)
+
                 robot.model.jointPlacements[1] = pin.SE3(np.eye(3), des_base)
                 des_pr = copy.deepcopy(rfoot_p[0:3, 0])
                 des_pr[0] = copy.deepcopy((-rfoot_p[0, 0]- 0 + pr_homing_fix[0]))
@@ -647,7 +661,7 @@ def main():
 
                 if (i<=1):
                     com_ref_base = des_base
-                    com_feedback_base = gcom_m
+                    com_feedback_base = base_pos_m
             else:  ####routine2: set the based position in local framework(note that always zeros), transform the base function in the
                 des_pl = np.array([0.03 * abs(math.sin((t - t_homing) * 5 * math.pi / 180)),
                                    0 - 0.05 * (math.sin((t - t_homing) * 5 * math.pi / 180)),
@@ -655,25 +669,42 @@ def main():
                 des_pr = np.array([0.03 * abs(math.sin((t - t_homing) * 5 * math.pi / 180)),
                                    0 - 0.05 * (math.sin((t - t_homing) * 5 * math.pi / 180)),
                                    0.05 * abs(math.sin((t - t_homing) * 5 * math.pi / 180))]) + np.array(pr_homing_fix)
-            ################## IK-based control: in this case, we can use admittance control, preview control and PD controller for CoM control #################################33
+                
+                state_feedback[j, 0:3] = gcom_m
+                state_feedback[j, 3:6] = right_sole_pos
+                state_feedback[j, 6:9] = left_sole_pos
+                state_feedback[j, 9:15] = right_ankle_force
+                state_feedback[j, 15:21] = left_ankle_force
+                state_feedback[j, 21:24] = gcop_m
+                state_feedback[j, 24:27] = dcm_pos_m
+                state_feedback[j, 27:30] = com_vel_m
+                state_feedback[j, 30:33] = base_pos_m
+                state_feedback[j, 33:36] = base_angle_m
+                # print('base_link_position:',base_pos_m)
+                # print('right_leg_sole_position:', right_sole_pos)
+                # print('left_leg_sole_position:', left_sole_pos)   
+                #                              
+            # ################# IK-based feeback control: we can use admittance control#################################33
             # com_ref_det = np.array(des_base) - np.array(com_ref_base)
-            # com_feedback_det = np.array(gcom_m) - np.array(com_feedback_base)
+            # com_feedback_det = np.array(base_pos_m) - np.array(com_feedback_base)
             # angle_ref_det = des_base_ori
             # angle_feedback_det = base_angle_m
-            #
+            
             # det_comxxxx, det_body_anglexxxx =Controller_ver.CoM_Body_pd(dt,com_ref_det, com_feedback_det, com_ref_det_pre, com_feedback_det_pre, angle_ref_det,angle_feedback_det, angle_ref_det_pre, angle_feedback_det_pre)
             # des_com_pos_control = det_comxxxx + np.array(des_base)
             # det_base_angle_control = det_body_anglexxxx
             # det_base_matrix_control = Controller_ver.RotMatrixfromEuler(det_base_angle_control)
             # robot.model.jointPlacements[1] = pin.SE3(det_base_matrix_control, des_com_pos_control)
             # # robot.model.jointPlacements[1] = pin.SE3(np.eye(3), des_com_pos_control)
-            #
+            
             # com_ref_det_pre = com_ref_det
             # com_feedback_det_pre = com_feedback_det
             # angle_ref_det_pre = angle_ref_det
             # angle_feedback_det_pre = angle_feedback_det
-            #
-            ############ IK-solution for the float-based humanod: providing initial guess "homing_pose" ###############################################################
+
+
+
+            ############ IK-solution for the float-based humanod: providing initial guess "homing_pose" ------#################
             ########### set endeffector id for ik using pinocchio
             JOINT_IDl = idl[5]
             JOINT_IDr = idr[5]
@@ -697,6 +728,8 @@ def main():
             #########################################################################################
 
         i += 1
+
+        ########## plot ########################################
         if (i == FileLength - 1):
             np.savetxt(traj_filename, traj_opt, fmt='%s', newline='\n')
             np.savetxt(angle_filename, joint_opt, fmt='%s', newline='\n')
@@ -704,6 +737,42 @@ def main():
             np.savetxt(nlp_traj_filename, outx, fmt='%s', newline='\n')
             np.savetxt(kmp_traj_filename, RLfoot_com_pos, fmt='%s', newline='\n')
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Process in ending, save data!!!!!!!!!!!!!!!!!!!!!!!!11")
+
+            #-------------------------# CoM plots #-------------------------__#
+
+            fig,axs2 = plt.subplots(3,constrained_layout=True,figsize=(6.5,7))
+            plt.rcParams.update({'font.size': 14})
+            axs2[0].plot(t_long,RLfoot_com_pos[0,:],'g',label="rfootx")
+            axs2[0].plot(t_long,RLfoot_com_pos[3,:],'r',label="lfootx")
+            axs2[0].plot(t_long,RLfoot_com_pos[6,:],'b',label="comx")
+            axs2[0].plot(t_long,state_feedback[:,30],label="pelvisx")
+            
+            axs2[0].set_xlabel('Time (s)', fontsize=12)
+            axs2[0].legend(loc='upper left')
+            axs2[0].grid()
+
+            axs2[1].plot(t_long,RLfoot_com_pos[1,:],'g',label="rfooty")
+            axs2[1].plot(t_long,RLfoot_com_pos[4,:],'r',label="lfooty")
+            axs2[1].plot(t_long,RLfoot_com_pos[7,:],'b',label="comy")
+            axs2[1].plot(t_long,state_feedback[:,31],label="pelvisy")
+            axs2[1].set_xlabel('Time (s)', fontsize=12)
+            axs2[1].legend(loc='upper left')
+            axs2[1].grid()
+
+            axs2[2].plot(t_long,RLfoot_com_pos[2,:],'g',label="rfootz")
+            axs2[2].plot(t_long,RLfoot_com_pos[5,:],'r',label="lfootz")
+            axs2[2].plot(t_long,RLfoot_com_pos[8,:],'b',label="comz")
+            axs2[2].plot(t_long,state_feedback[:,32],label="pelvisz")
+            axs2[2].set_xlabel('Time (s)', fontsize=12)
+            axs2[2].legend(loc='upper left')
+            axs2[2].grid()
+            # if SAVE_DATA:
+            #     plt.savefig(fname + '/orientation_Trial_' + str(trial_num) + ".pdf",dpi=600, bbox_inches = "tight")
+
+            plt.show()
+
+
+
         ##### doesn't use it in realtime simu mode
         pybullet.stepSimulation()
 
@@ -716,6 +785,8 @@ def main():
         # # prevPose = lsx_ori
         # prevPose1 = ls[4]
         # hasPrevPose = 1
+
+
 
 
 if __name__ == "__main__":
