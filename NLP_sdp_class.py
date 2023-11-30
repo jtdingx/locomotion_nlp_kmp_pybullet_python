@@ -837,6 +837,10 @@ class NLP:
       self.cpx_T[i, 0] = self.COMx_es[k - 1, 0] + self.comvx_endref[0, 0] / Wn
       self.cpy_T[i, 0] = self.COMy_es[k - 1, 0] + self.comvy_endref[0, 0] / Wn
 
+      ## next ones CoM ####
+      self.comx[i+1, 0] = self.comx[i, 0]+self.comvx[i, 0]*self.dt
+      self.comy[i+1, 0] = self.comy[i, 0]+self.comvy[i, 0]*self.dt
+      
       ############################################################################
       ### state feedback ############
       # % % % external disturbances
@@ -991,47 +995,149 @@ class NLP:
           self.comaz[i, :] = 0
 
   ############ CoM-high frequency- generation #################################
-  def XGetSolution_CoM_position(self, walktime, dt_sample, j_index):
-      com_inte = np.zeros([3, 1])
+#   def XGetSolution_CoM_position(self, walktime, dt_sample, j_index,mpc_horizon):
+#       com_inte = np.zeros([3, 1])
 
-      if (walktime >= 2):
-          t_cur = walktime * dt_sample
-          t_plan = [0, dt_sample, (j_index + 1) * self.dt - (t_cur - 2 * dt_sample)]
+#       if (walktime >= 2):
+#           t_cur = walktime * dt_sample
+#           t_plan = [0, dt_sample, (j_index + 1) * self.dt - (t_cur - 2 * dt_sample)]
 
-          AAA = np.zeros([4, 4])
+#           AAA = np.zeros([4, 4])
 
-          AAA[0, :] = np.array([pow(t_plan[0], 3), pow(t_plan[0], 2), pow(t_plan[0], 1), 1])  ### initial pose
-          AAA[1, :] = np.array([pow(t_plan[1], 3), pow(t_plan[1], 2), pow(t_plan[1], 1), 1])  ### middle position
-          AAA[2, :] = np.array([pow(t_plan[2], 3), pow(t_plan[2], 2), pow(t_plan[2], 1), 1])  ### ending position
-          AAA[3, :] = np.array([3 * pow(t_plan[2], 2), 2 * pow(t_plan[2], 1), 1, 0])  ### ending vel
+#           AAA[0, :] = np.array([pow(t_plan[0], 3), pow(t_plan[0], 2), pow(t_plan[0], 1), 1])  ### initial pose
+#           AAA[1, :] = np.array([pow(t_plan[1], 3), pow(t_plan[1], 2), pow(t_plan[1], 1), 1])  ### middle position
+#           AAA[2, :] = np.array([pow(t_plan[2], 3), pow(t_plan[2], 2), pow(t_plan[2], 1), 1])  ### ending position
+#           AAA[3, :] = np.array([3 * pow(t_plan[2], 2), 2 * pow(t_plan[2], 1), 1, 0])  ### ending vel
 
-          AAA_inv = np.linalg.inv(AAA)
+#           AAA_inv = np.linalg.inv(AAA)
 
-          t_a_plan = np.array([[pow(2 * dt_sample, 3), pow(2 * dt_sample, 2), pow(2 * dt_sample, 1), 1]])
+#           t_a_plan = np.array([[pow(2 * dt_sample, 3), pow(2 * dt_sample, 2), pow(2 * dt_sample, 1), 1]])
 
-          tempx = np.array(
-              [[self.comx1[walktime - 2, 0]], [self.comx1[walktime - 1, 0]], [self.comx[j_index, 0]], [self.comvx[j_index, 0]]])
-          com_inte[0, :] = np.dot(t_a_plan, np.dot(AAA_inv, tempx))
+#           tempx = np.array(
+#               [[self.comx1[walktime - 2, 0]], [self.comx1[walktime - 1, 0]], [self.comx[j_index, 0]], [self.comvx[j_index, 0]]])
+#           com_inte[0, :] = np.dot(t_a_plan, np.dot(AAA_inv, tempx))
 
-          tempy = np.array(
-              [[self.comy1[walktime - 2, 0]], [self.comy1[walktime - 1, 0]], [self.comy[j_index, 0]], [self.comvy[j_index, 0]]])
-          com_inte[1, :] = np.dot(t_a_plan, np.dot(AAA_inv, tempy))
+#           tempy = np.array(
+#               [[self.comy1[walktime - 2, 0]], [self.comy1[walktime - 1, 0]], [self.comy[j_index, 0]], [self.comvy[j_index, 0]]])
+#           com_inte[1, :] = np.dot(t_a_plan, np.dot(AAA_inv, tempy))
 
-          tempz = np.array(
-              [[self.comz1[walktime - 2, 0]], [self.comz1[walktime - 1, 0]], [self.comz[j_index, 0]], [self.comvz[j_index, 0]]])
-          com_inte[2, :] = np.dot(t_a_plan, np.dot(AAA_inv, tempz))
+#           tempz = np.array(
+#               [[self.comz1[walktime - 2, 0]], [self.comz1[walktime - 1, 0]], [self.comz[j_index, 0]], [self.comvz[j_index, 0]]])
+#           com_inte[2, :] = np.dot(t_a_plan, np.dot(AAA_inv, tempz))
 
 
-      else:
-          com_inte[0, 0] = copy.deepcopy(self.comx1[walktime - 1, 0])
-          com_inte[1, 0] = copy.deepcopy(self.comy1[walktime - 1, 0])
-          com_inte[2, 0] = copy.deepcopy(self.comz1[walktime - 1, 0])
+#       else:
+#           com_inte[0, 0] = copy.deepcopy(self.comx1[walktime - 1, 0])
+#           com_inte[1, 0] = copy.deepcopy(self.comy1[walktime - 1, 0])
+#           com_inte[2, 0] = copy.deepcopy(self.comz1[walktime - 1, 0])
 
-      self.comx1[walktime, 0] = copy.deepcopy(com_inte[0, 0])
-      self.comy1[walktime, 0] = copy.deepcopy(com_inte[1, 0])
-      self.comz1[walktime, 0] = copy.deepcopy(com_inte[2, 0])
+#       self.comx1[walktime, 0] = copy.deepcopy(com_inte[0, 0])
+#       self.comy1[walktime, 0] = copy.deepcopy(com_inte[1, 0])
+#       self.comz1[walktime, 0] = copy.deepcopy(com_inte[2, 0])
 
-      return com_inte
+#       return com_inte
+
+#   def XGetSolution_CoM_position(self, walktime, dt_sample, j_index,mpc_horizon):
+#         # com_inte = np.zeros([3, 1])
+#         com_inte = np.zeros([6, mpc_horizon])
+
+#         if (walktime >= 2):
+#             t_cur = walktime * dt_sample
+#             t_plan = [0, dt_sample, (j_index + 1) * self.dt - (t_cur - 2 * dt_sample), (j_index + 2) * self.dt - (t_cur - 2 * dt_sample)]
+
+#             AAA = np.zeros([5, 5])
+
+#             AAA[0, :] = np.array([pow(t_plan[0], 4), pow(t_plan[0], 3), pow(t_plan[0], 2), pow(t_plan[0], 1), 1])  ### initial pose
+#             AAA[1, :] = np.array([pow(t_plan[1], 4), pow(t_plan[1], 3), pow(t_plan[1], 2), pow(t_plan[1], 1), 1])  ### middle position
+#             AAA[2, :] = np.array([pow(t_plan[2], 4), pow(t_plan[2], 3), pow(t_plan[2], 2), pow(t_plan[2], 1), 1])  ### ending position
+#             AAA[3, :] = np.array([4 * pow(t_plan[2], 3), 3 * pow(t_plan[2], 2), 2 * pow(t_plan[2], 1), 1, 0])  ### ending vel
+#             AAA[4, :] = np.array([pow(t_plan[3], 4), pow(t_plan[3], 3), pow(t_plan[3], 2), pow(t_plan[3], 1), 1])  ### ending position
+
+#             AAA_inv = np.linalg.inv(AAA)
+
+
+#             tempx = np.array(
+#                 [[self.comx1[walktime - 2, 0]], [self.comx1[walktime - 1, 0]], [self.comx[j_index, 0]], [self.comvx[j_index, 0]], [self.comx[j_index+1, 0]]])
+            
+
+#             tempy = np.array(
+#                 [[self.comy1[walktime - 2, 0]], [self.comy1[walktime - 1, 0]], [self.comy[j_index, 0]], [self.comvy[j_index, 0]], [self.comy[j_index+1, 0]]])
+            
+
+#             tempz = np.array(
+#                 [[self.comz1[walktime - 2, 0]], [self.comz1[walktime - 1, 0]], [self.comz[j_index, 0]], [self.comvz[j_index, 0]], [self.comz[j_index+1, 0]]])
+            
+#             for i in range(mpc_horizon):
+#                 t_a_plan = np.array([[pow((2+i) * dt_sample, 4), pow((2+i) * dt_sample, 3), pow((2+i) * dt_sample, 2), pow((2+i) * dt_sample, 1), 1]])
+
+#                 com_inte[0, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempx))
+#                 com_inte[1, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempy))
+#                 com_inte[2, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempz))
+
+
+#         else:
+#             for i in range(mpc_horizon):
+#                 com_inte[0, i] = copy.deepcopy(self.comx1[walktime - 1, 0])
+#                 com_inte[1, i] = copy.deepcopy(self.comy1[walktime - 1, 0])
+#                 com_inte[2, i] = copy.deepcopy(self.comz1[walktime - 1, 0])
+
+#         self.comx1[walktime, 0] = copy.deepcopy(com_inte[0, 0])
+#         self.comy1[walktime, 0] = copy.deepcopy(com_inte[1, 0])
+#         self.comz1[walktime, 0] = copy.deepcopy(com_inte[2, 0])
+
+#         return com_inte
+
+  def XGetSolution_CoM_position(self, walktime, dt_sample, j_index,mpc_horizon):
+        # com_inte = np.zeros([3, 1])
+        com_inte = np.zeros([6, mpc_horizon])
+
+        if (walktime >= 2):
+            t_cur = walktime * dt_sample
+            t_plan = [0, dt_sample, (j_index + 1) * self.dt - (t_cur - 2 * dt_sample), (j_index + 2) * self.dt - (t_cur - 2 * dt_sample)]
+
+            AAA = np.zeros([4, 4])
+
+            AAA[0, :] = np.array([pow(t_plan[0], 3), pow(t_plan[0], 2), pow(t_plan[0], 1), 1])  ### initial pose
+            AAA[1, :] = np.array([pow(t_plan[1], 3), pow(t_plan[1], 2), pow(t_plan[1], 1), 1])  ### middle position
+            AAA[2, :] = np.array([pow(t_plan[2], 3), pow(t_plan[2], 2), pow(t_plan[2], 1), 1])  ### ending position
+            AAA[3, :] = np.array([pow(t_plan[3], 3), pow(t_plan[3], 2), pow(t_plan[3], 1), 1])  ### ending position
+
+            AAA_inv = np.linalg.inv(AAA)
+
+
+            tempx = np.array(
+                [[self.comx1[walktime - 2, 0]], [self.comx1[walktime - 1, 0]], [self.comx[j_index, 0]], [self.comx[j_index+1, 0]]])
+            
+
+            tempy = np.array(
+                [[self.comy1[walktime - 2, 0]], [self.comy1[walktime - 1, 0]], [self.comy[j_index, 0]], [self.comy[j_index+1, 0]]])
+            
+
+            tempz = np.array(
+                [[self.comz1[walktime - 2, 0]], [self.comz1[walktime - 1, 0]], [self.comz[j_index, 0]], [self.comz[j_index+1, 0]]])
+            
+            for i in range(mpc_horizon):
+                t_a_plan = np.array([[pow((2+i) * dt_sample, 3), pow((2+i) * dt_sample, 2), pow((2+i) * dt_sample, 1), 1]])
+
+                com_inte[0, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempx))
+                com_inte[1, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempy))
+                com_inte[2, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempz))
+
+
+        else:
+            for i in range(mpc_horizon):
+                com_inte[0, i] = copy.deepcopy(self.comx1[walktime - 1, 0])
+                com_inte[1, i] = copy.deepcopy(self.comy1[walktime - 1, 0])
+                com_inte[2, i] = copy.deepcopy(self.comz1[walktime - 1, 0])
+
+        self.comx1[walktime, 0] = copy.deepcopy(com_inte[0, 0])
+        self.comy1[walktime, 0] = copy.deepcopy(com_inte[1, 0])
+        self.comz1[walktime, 0] = copy.deepcopy(com_inte[2, 0])
+
+        return com_inte
+
+
+
 
   def kmp_foot_trajectory(self, walktime, dt_sample, j_index, rleg_traj_refx, lleg_traj_refx, inDim, outDim, kh, lamda,
                           pvFlag,lift_height):
@@ -1283,7 +1389,7 @@ class NLP:
 
 
 ########### comparison with KMP: 
-  def Bezier_foot_trajectory(self, walktime, dt_sample, j_index,lift_height):
+  def Bezier_foot_trajectory(self, walktime, dt_sample, j_index,lift_height,mpc_horizon):
       ### dt_sample ==self.dtx,  j_index = i (nlp_nao),  walktime = (real_time loop number)
       ### lift height for foot trajectory
       lift_max = lift_height
@@ -1295,13 +1401,27 @@ class NLP:
       bjx1 = self.index_find(j_index + 1, self.Tx, 0)
       t_des = (walktime + 2) * dt_sample - self.Tx[bjx1 - 1, 0] - td[bjx1 - 2, 0]/2  ####elapsed time
 
+      
+
       Rfpos = np.zeros([3, 1])
       Lfpos = np.zeros([3, 1])
+      foot_support_position = np.zeros([2,mpc_horizon])
 
       Rfpos[1, 0] = -abs(self.footy_offline[3, 0])
       Lfpos[1, 0] = abs(self.footy_offline[3, 0])
 
       if (bjx1 >= 2):
+
+          for ijx in range(0,mpc_horizon):
+            t_predict_middle = (walktime + 2+ijx) * dt_sample - self.Tx[bjx1 - 1, 0] - td[bjx1 - 2, 0]/2  ####elapsed time
+            foot_support_position[0,ijx] = self.footx_ref[bjx1 - 1, 0]   
+            foot_support_position[1,ijx] = self.footy_ref[bjx1 - 1, 0] 
+            if(t_predict_middle >= self.Ts[bjx1-1, 0] - td[bjx1-1, 0]/2 - td[bjx1-2, 0]/2 - dt_sample):
+                foot_support_position[0,ijx] = self.footx_ref[bjx1, 0]   
+                foot_support_position[1,ijx] = self.footy_ref[bjx1, 0] 
+
+
+
           if ((bjx1 % 2) == 0):  ##singular number: left support
               self.lfoot_kmp[0, 0] = self.footx_ref[bjx1 - 1, 0]
               self.lfoot_kmp[1, 0] = self.footy_ref[bjx1 - 1, 0]
@@ -1309,6 +1429,7 @@ class NLP:
               self.lfootv_kmp[0, 0] = 0.0
               self.lfootv_kmp[1, 0] = 0.0
               self.lfootv_kmp[2, 0] = 0.0
+          
 
               if (t_des <= dt_sample):  ### double support phase
                 self.rfoot_kmp[0, 0] = self.footx_ref[bjx1 - 2, 0]
@@ -1408,10 +1529,14 @@ class NLP:
       else:
           Rfpos[1, 0] = -abs(self.footy_offline[3, 0])
           Lfpos[1, 0] = abs(self.footy_offline[3, 0])
+          
+          
+          for ijx in range(0,mpc_horizon):
+            foot_support_position[:,ijx] = Lfpos[0:2,0]
 
       self.footy_ref[0, 0] = copy.deepcopy(fooy_modeif)
 
-      return Rfpos, Lfpos
+      return Rfpos, Lfpos,foot_support_position
 
 
 
