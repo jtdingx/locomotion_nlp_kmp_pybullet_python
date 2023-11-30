@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/include -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/SuiteSparse_config -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/include -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/ldl/include
+C_INCLUDES = -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/include -I/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include
 
 C_FLAGS =  -O3 -fPIE
 

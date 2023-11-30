@@ -42,3 +42,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/src/osqp/cmake_install.cmake")
+  include("/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/include/cmake_install.cmake")
+
+endif()
+

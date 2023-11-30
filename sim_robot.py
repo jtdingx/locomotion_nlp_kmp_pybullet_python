@@ -345,11 +345,13 @@ class SimRobot:
 
     def getActuatedJointPositions(self):
         actuatedJointPositions = np.array([state[0] for state in pybullet.getJointStates(self.id, self.getActuatedJointIndexes())])
-        return dict(zip(self.getActuatedJointNames(), actuatedJointPositions))
+        # return dict(zip(self.getActuatedJointNames(), actuatedJointPositions))
+        return actuatedJointPositions
 
     def getActuatedJointVelocities(self):
         actuatedJointVelocities = np.array([state[1] for state in pybullet.getJointStates(self.id, self.getActuatedJointIndexes())])
-        return dict(zip(self.getActuatedJointNames(), actuatedJointVelocities))
+        # return dict(zip(self.getActuatedJointNames(), actuatedJointVelocities))
+        return actuatedJointVelocities
 
     def getActuatedJointStates(self):
         actuatedJointStates = [state[:2] for state in pybullet.getJointStates(self.id, self.getActuatedJointIndexes())]

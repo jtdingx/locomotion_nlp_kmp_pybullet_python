@@ -82,16 +82,53 @@ clean: solver_code/clean
 # Directory level rules for directory solver_code
 
 # Recursive "all" directory target.
-solver_code/all:
+solver_code/all: solver_code/CMakeFiles/emosqpstatic.dir/all
+solver_code/all: solver_code/CMakeFiles/example.dir/all
+solver_code/all: solver_code/src/osqp/all
+solver_code/all: solver_code/include/all
 .PHONY : solver_code/all
 
 # Recursive "preinstall" directory target.
-solver_code/preinstall:
+solver_code/preinstall: solver_code/src/osqp/preinstall
+solver_code/preinstall: solver_code/include/preinstall
 .PHONY : solver_code/preinstall
 
 # Recursive "clean" directory target.
-solver_code/clean:
+solver_code/clean: solver_code/CMakeFiles/emosqpstatic.dir/clean
+solver_code/clean: solver_code/CMakeFiles/example.dir/clean
+solver_code/clean: solver_code/src/osqp/clean
+solver_code/clean: solver_code/include/clean
 .PHONY : solver_code/clean
+
+#=============================================================================
+# Directory level rules for directory solver_code/include
+
+# Recursive "all" directory target.
+solver_code/include/all:
+.PHONY : solver_code/include/all
+
+# Recursive "preinstall" directory target.
+solver_code/include/preinstall:
+.PHONY : solver_code/include/preinstall
+
+# Recursive "clean" directory target.
+solver_code/include/clean:
+.PHONY : solver_code/include/clean
+
+#=============================================================================
+# Directory level rules for directory solver_code/src/osqp
+
+# Recursive "all" directory target.
+solver_code/src/osqp/all:
+.PHONY : solver_code/src/osqp/all
+
+# Recursive "preinstall" directory target.
+solver_code/src/osqp/preinstall:
+.PHONY : solver_code/src/osqp/preinstall
+
+# Recursive "clean" directory target.
+solver_code/src/osqp/clean:
+.PHONY : solver_code/src/osqp/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/cpg_example.dir
@@ -100,12 +137,12 @@ solver_code/clean:
 CMakeFiles/cpg_example.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61 "Built target cpg_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=15,16,17,18,19,20,21,22,23,24,25,26,27,28,29 "Built target cpg_example"
 .PHONY : CMakeFiles/cpg_example.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cpg_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cpg_example.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 0
 .PHONY : CMakeFiles/cpg_example.dir/rule
@@ -126,12 +163,12 @@ CMakeFiles/cpg_example.dir/clean:
 CMakeFiles/cpg.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30 "Built target cpg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target cpg"
 .PHONY : CMakeFiles/cpg.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cpg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cpg.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 0
 .PHONY : CMakeFiles/cpg.dir/rule
@@ -144,6 +181,58 @@ cpg: CMakeFiles/cpg.dir/rule
 CMakeFiles/cpg.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/clean
 .PHONY : CMakeFiles/cpg.dir/clean
+
+#=============================================================================
+# Target rules for target solver_code/CMakeFiles/emosqpstatic.dir
+
+# All Build rule for target.
+solver_code/CMakeFiles/emosqpstatic.dir/all:
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/emosqpstatic.dir/build.make solver_code/CMakeFiles/emosqpstatic.dir/depend
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/emosqpstatic.dir/build.make solver_code/CMakeFiles/emosqpstatic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=30,31,32,33,34,35,36,37,38,39,40,41 "Built target emosqpstatic"
+.PHONY : solver_code/CMakeFiles/emosqpstatic.dir/all
+
+# Build rule for subdir invocation for target.
+solver_code/CMakeFiles/emosqpstatic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solver_code/CMakeFiles/emosqpstatic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 0
+.PHONY : solver_code/CMakeFiles/emosqpstatic.dir/rule
+
+# Convenience name for target.
+emosqpstatic: solver_code/CMakeFiles/emosqpstatic.dir/rule
+.PHONY : emosqpstatic
+
+# clean rule for target.
+solver_code/CMakeFiles/emosqpstatic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/emosqpstatic.dir/build.make solver_code/CMakeFiles/emosqpstatic.dir/clean
+.PHONY : solver_code/CMakeFiles/emosqpstatic.dir/clean
+
+#=============================================================================
+# Target rules for target solver_code/CMakeFiles/example.dir
+
+# All Build rule for target.
+solver_code/CMakeFiles/example.dir/all: solver_code/CMakeFiles/emosqpstatic.dir/all
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/example.dir/build.make solver_code/CMakeFiles/example.dir/depend
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/example.dir/build.make solver_code/CMakeFiles/example.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=42,43 "Built target example"
+.PHONY : solver_code/CMakeFiles/example.dir/all
+
+# Build rule for subdir invocation for target.
+solver_code/CMakeFiles/example.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solver_code/CMakeFiles/example.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles 0
+.PHONY : solver_code/CMakeFiles/example.dir/rule
+
+# Convenience name for target.
+example: solver_code/CMakeFiles/example.dir/rule
+.PHONY : example
+
+# clean rule for target.
+solver_code/CMakeFiles/example.dir/clean:
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/example.dir/build.make solver_code/CMakeFiles/example.dir/clean
+.PHONY : solver_code/CMakeFiles/example.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

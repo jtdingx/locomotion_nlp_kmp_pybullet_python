@@ -2,9 +2,10 @@ CMakeFiles/cpg.dir/src/cpg_workspace.c.o: \
  /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/src/cpg_workspace.c \
  /usr/include/stdc-predef.h \
  /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/include/cpg_workspace.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/ecos.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/glblopts.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/float.h /usr/include/math.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/types.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/glob_opts.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/osqp_configure.h \
+ /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -25,50 +26,14 @@ CMakeFiles/cpg.dir/src/cpg_workspace.c.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/SuiteSparse_config/SuiteSparse_config.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/constants.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/workspace.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/types.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/qdldl_interface.h \
+ /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/qdldl_types.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /usr/include/stdlib.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
- /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/spla.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/cone.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/expcone.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/wright_omega.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/kkt.h \
- /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/timer.h \
- /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/sys/time.h
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h

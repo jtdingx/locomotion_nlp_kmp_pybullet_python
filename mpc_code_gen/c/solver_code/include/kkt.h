@@ -1,135 +1,109 @@
-/*
- * ECOS - Embedded Conic Solver.
- * Copyright (C) 2012-2015 A. Domahidi [domahidi@embotech.com],
- * Automatic Control Lab, ETH Zurich & embotech GmbH, Zurich, Switzerland.
+#ifndef KKT_H
+# define KKT_H
+
+# ifdef __cplusplus
+extern "C" {
+# endif // ifdef __cplusplus
+
+# include "types.h"
+
+# ifndef EMBEDDED
+
+#  include "cs.h"
+
+/**
+ * Form square symmetric KKT matrix of the form
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * [P + param1 I,            A';
+ *  A             -diag(param2)]
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * NB: Only the upper triangular part is stuffed!
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ *  If Pdiag_idx is not OSQP_NULL, it saves the index of the diagonal
+ * elements of P there and the number of diagonal elements in Pdiag_n.
+ *
+ * Similarly, if rhotoKKT is not null,
+ * it saves where the values of param2 go in the final KKT matrix
+ *
+ * NB: Pdiag_idx needs to be freed!
+ *
+ * @param  P          cost matrix (already just upper triangular part)
+ * @param  A          linear constraint matrix
+ * @param  format     CSC (0) or CSR (1)
+ * @param  param1     regularization parameter
+ * @param  param2     regularization parameter (vector)
+ * @param  PtoKKT     (modified) index mapping from elements of P to KKT matrix
+ * @param  AtoKKT     (modified) index mapping from elements of A to KKT matrix
+ * @param  Pdiag_idx  (modified) Address of the index of diagonal elements in P
+ * @param  Pdiag_n    (modified) Address to the number of diagonal elements in P
+ * @param  param2toKKT    (modified) index mapping from param2 to elements of
+ *KKT
+ * @return            return status flag
  */
+csc* form_KKT(const csc  *P,
+              const  csc *A,
+              c_int       format,
+              c_float     param1,
+              c_float    *param2,
+              c_int      *PtoKKT,
+              c_int      *AtoKKT,
+              c_int     **Pdiag_idx,
+              c_int      *Pdiag_n,
+              c_int      *param2toKKT);
+# endif // ifndef EMBEDDED
 
 
-/* The KKT module.
- * Handles all computation related to KKT matrix:
- * - updating the matrix
- * - its factorization
- * - solving for search directions
- * - etc.
- */
+# if EMBEDDED != 1
 
-
-#ifndef __KKT_H__
-#define __KKT_H__
-
-#include "glblopts.h"
-#include "spla.h"
-#include "cone.h"
-
-typedef struct kkt{	
-	spmat*  PKPt;    /* Permuted KKT matrix, upper part only      */	
-	spmat*  L;       /* LDL factor L                              */
-    
-	pfloat* D;       /* diagonal matrix D                         */	
-	pfloat* work1;   /* workspace needed for factorization        */
-	pfloat* work2;   /* workspace needed for factorization        */
-	pfloat* work3;   /* workspace needed for factorization        */
-    pfloat* work4;   /* workspace needed for factorization        */
-    pfloat* work5;   /* workspace needed for factorization        */
-    pfloat* work6;   /* workspace needed for factorization        */
-	pfloat* RHS1;    /* Right hand side 1						  */
-	pfloat* RHS2;    /* Right hand side 2           			  */	
-	pfloat* dx1;     /* search direction of size n				  */
-	pfloat* dx2;     /* search direction of size n				  */
-	pfloat* dy1;     /* search direction of size p				  */
-	pfloat* dy2;     /* search direction of size p				  */
-	pfloat* dz1;     /* search direction of size m				  */
-	pfloat* dz2;     /* search direction of size m				  */	
-	
-    idxint* P;       /* permutation                               */
-	idxint* Pinv;    /* reverse permutation						  */
-	idxint* PK;      /* permutation of row indices of KKT matrix  */	
-	idxint* Parent;  /* Elimination tree of factorization         */
-	idxint* Sign;    /* Permuted sign vector for regularization   */
-	idxint* Pattern; /* idxint workspace needed for factorization */
-	idxint* Flag;    /* idxint workspace needed for factorization */
-	idxint* Lnz;     /* idxint workspace needed for factorization */
-	
-	pfloat delta;    /* size of regularization					  */
-} kkt;
-
-/* Return codes */
-#define KKT_PROBLEM (0)
-#define KKT_OK      (1)
-
-/* METHODS */
-
-/** 
- * Factorization of KKT matrix. Just a convenient wrapper for the LDL call.
- * The second argument delta determindes the threshold of dynamic regularization,
- * while the last argument is the regularization parameter if it becomes active.
+/**
+ * Update KKT matrix using the elements of P
  *
- * If detailed profiling is turned on, the function returns the accumulated times
- * for sparsity pattern computation in t1 and for numerical solve in t2.
+ * @param KKT       KKT matrix in CSC form (upper-triangular)
+ * @param P         P matrix in CSC form (upper-triangular)
+ * @param PtoKKT    Vector of pointers from P->x to KKT->x
+ * @param param1    Parameter added to the diagonal elements of P
+ * @param Pdiag_idx Index of diagonal elements in P->x
+ * @param Pdiag_n   Number of diagonal elements of P
  */
-#if PROFILING > 1
-idxint kkt_factor(kkt* KKT, pfloat eps, pfloat delta, pfloat *t1, pfloat *t2);
-#else
-idxint kkt_factor(kkt* KKT, pfloat eps, pfloat delta);
-#endif
+void update_KKT_P(csc          *KKT,
+                  const csc    *P,
+                  const c_int  *PtoKKT,
+                  const c_float param1,
+                  const c_int  *Pdiag_idx,
+                  const c_int   Pdiag_n);
 
 
 /**
- * Solves the permuted KKT system and returns the unpermuted search directions.
+ * Update KKT matrix using the elements of A
  *
- * On entry, the factorization of the permuted KKT matrix, PKPt, 
- * is assumed to be up to date (call kkt_factor beforehand to achieve this).
- * The right hand side, Pb, is assumed to be already permuted.
- *
- * On exit, the resulting search directions are written into dx, dy and dz,
- * where these variables are permuted back to the original ordering.
- *
- * KKT->nitref iterative refinement steps are applied to solve the linear system.
- *
- * Returns the number of iterative refinement steps really taken.
+ * @param KKT       KKT matrix in CSC form (upper-triangular)
+ * @param A         A matrix in CSC form (upper-triangular)
+ * @param AtoKKT    Vector of pointers from A->x to KKT->x
  */
-idxint kkt_solve(kkt* KKT,
-                 spmat* A, spmat* G,
-                 pfloat* Pb,
-                 pfloat* dx, pfloat* dy, pfloat* dz,
-                 idxint n, idxint p, idxint m,
-                 cone* C,
-                 idxint isinit,
-                 idxint nitref);
+void update_KKT_A(csc         *KKT,
+                  const csc   *A,
+                  const c_int *AtoKKT);
 
 
 /**
- * Updates the permuted KKT matrix by copying in the new scalings.
+ * Update KKT matrix with new param2
+ *
+ * @param KKT           KKT matrix
+ * @param param2        Parameter of the KKT matrix (vector)
+ * @param param2toKKT   index where param2 enters in the KKT matrix
+ * @param m             number of constraints
  */
-void kkt_update(spmat* PKP, idxint* P, cone *C);
+void update_KKT_param2(csc           *KKT,
+                       const c_float *param2,
+                       const c_int   *param2toKKT,
+                       const c_int    m);
+
+# endif // EMBEDDED != 1
 
 
-/**
- * Initializes the (3,3) block of the KKT matrix to produce the matrix
- *
- * 		[0  A'  G']
- * K =  [A  0   0 ]
- *      [G  0  -I ]
- *
- * It is assumed that the A,G have been already copied in appropriately,
- * and that enough memory has been allocated (this is done in preproc.c module).
- *
- * Note that the function works on the permuted KKT matrix.
- */
-void kkt_init(spmat* PKP, idxint* P, cone *C);
+# ifdef __cplusplus
+}
+# endif // ifdef __cplusplus
 
-
-#endif
+#endif // ifndef KKT_H

@@ -142,734 +142,328 @@ cpg/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/build
 .PHONY : cpg/fast
 
-solver_code/ecos_bb/ecos_bb.o: solver_code/ecos_bb/ecos_bb.c.o
-.PHONY : solver_code/ecos_bb/ecos_bb.o
+#=============================================================================
+# Target rules for targets named emosqpstatic
+
+# Build rule for target.
+emosqpstatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 emosqpstatic
+.PHONY : emosqpstatic
+
+# fast build rule for target.
+emosqpstatic/fast:
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/emosqpstatic.dir/build.make solver_code/CMakeFiles/emosqpstatic.dir/build
+.PHONY : emosqpstatic/fast
+
+#=============================================================================
+# Target rules for targets named example
+
+# Build rule for target.
+example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example
+.PHONY : example
+
+# fast build rule for target.
+example/fast:
+	$(MAKE) $(MAKESILENT) -f solver_code/CMakeFiles/example.dir/build.make solver_code/CMakeFiles/example.dir/build
+.PHONY : example/fast
+
+solver_code/src/osqp/auxil.o: solver_code/src/osqp/auxil.c.o
+.PHONY : solver_code/src/osqp/auxil.o
 
 # target to build an object file
-solver_code/ecos_bb/ecos_bb.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/ecos_bb/ecos_bb.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o
-.PHONY : solver_code/ecos_bb/ecos_bb.c.o
+solver_code/src/osqp/auxil.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/auxil.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o
+.PHONY : solver_code/src/osqp/auxil.c.o
 
-solver_code/ecos_bb/ecos_bb.i: solver_code/ecos_bb/ecos_bb.c.i
-.PHONY : solver_code/ecos_bb/ecos_bb.i
+solver_code/src/osqp/auxil.i: solver_code/src/osqp/auxil.c.i
+.PHONY : solver_code/src/osqp/auxil.i
 
 # target to preprocess a source file
-solver_code/ecos_bb/ecos_bb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/ecos_bb/ecos_bb.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.i
-.PHONY : solver_code/ecos_bb/ecos_bb.c.i
+solver_code/src/osqp/auxil.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/auxil.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.i
+.PHONY : solver_code/src/osqp/auxil.c.i
 
-solver_code/ecos_bb/ecos_bb.s: solver_code/ecos_bb/ecos_bb.c.s
-.PHONY : solver_code/ecos_bb/ecos_bb.s
+solver_code/src/osqp/auxil.s: solver_code/src/osqp/auxil.c.s
+.PHONY : solver_code/src/osqp/auxil.s
 
 # target to generate assembly for a file
-solver_code/ecos_bb/ecos_bb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/ecos_bb/ecos_bb.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.s
-.PHONY : solver_code/ecos_bb/ecos_bb.c.s
+solver_code/src/osqp/auxil.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/auxil.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.s
+.PHONY : solver_code/src/osqp/auxil.c.s
 
-solver_code/ecos_bb/ecos_bb_preproc.o: solver_code/ecos_bb/ecos_bb_preproc.c.o
-.PHONY : solver_code/ecos_bb/ecos_bb_preproc.o
+solver_code/src/osqp/error.o: solver_code/src/osqp/error.c.o
+.PHONY : solver_code/src/osqp/error.o
 
 # target to build an object file
-solver_code/ecos_bb/ecos_bb_preproc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o
-.PHONY : solver_code/ecos_bb/ecos_bb_preproc.c.o
+solver_code/src/osqp/error.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/error.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o
+.PHONY : solver_code/src/osqp/error.c.o
 
-solver_code/ecos_bb/ecos_bb_preproc.i: solver_code/ecos_bb/ecos_bb_preproc.c.i
-.PHONY : solver_code/ecos_bb/ecos_bb_preproc.i
+solver_code/src/osqp/error.i: solver_code/src/osqp/error.c.i
+.PHONY : solver_code/src/osqp/error.i
 
 # target to preprocess a source file
-solver_code/ecos_bb/ecos_bb_preproc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/ecos_bb/ecos_bb_preproc.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.i
-.PHONY : solver_code/ecos_bb/ecos_bb_preproc.c.i
+solver_code/src/osqp/error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/error.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.i
+.PHONY : solver_code/src/osqp/error.c.i
 
-solver_code/ecos_bb/ecos_bb_preproc.s: solver_code/ecos_bb/ecos_bb_preproc.c.s
-.PHONY : solver_code/ecos_bb/ecos_bb_preproc.s
+solver_code/src/osqp/error.s: solver_code/src/osqp/error.c.s
+.PHONY : solver_code/src/osqp/error.s
 
 # target to generate assembly for a file
-solver_code/ecos_bb/ecos_bb_preproc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/ecos_bb/ecos_bb_preproc.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.s
-.PHONY : solver_code/ecos_bb/ecos_bb_preproc.c.s
+solver_code/src/osqp/error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/error.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.s
+.PHONY : solver_code/src/osqp/error.c.s
 
-solver_code/external/amd/src/amd_1.o: solver_code/external/amd/src/amd_1.c.o
-.PHONY : solver_code/external/amd/src/amd_1.o
+solver_code/src/osqp/kkt.o: solver_code/src/osqp/kkt.c.o
+.PHONY : solver_code/src/osqp/kkt.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_1.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_1.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o
-.PHONY : solver_code/external/amd/src/amd_1.c.o
+solver_code/src/osqp/kkt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/kkt.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o
+.PHONY : solver_code/src/osqp/kkt.c.o
 
-solver_code/external/amd/src/amd_1.i: solver_code/external/amd/src/amd_1.c.i
-.PHONY : solver_code/external/amd/src/amd_1.i
+solver_code/src/osqp/kkt.i: solver_code/src/osqp/kkt.c.i
+.PHONY : solver_code/src/osqp/kkt.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_1.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_1.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.i
-.PHONY : solver_code/external/amd/src/amd_1.c.i
+solver_code/src/osqp/kkt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/kkt.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.i
+.PHONY : solver_code/src/osqp/kkt.c.i
 
-solver_code/external/amd/src/amd_1.s: solver_code/external/amd/src/amd_1.c.s
-.PHONY : solver_code/external/amd/src/amd_1.s
+solver_code/src/osqp/kkt.s: solver_code/src/osqp/kkt.c.s
+.PHONY : solver_code/src/osqp/kkt.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_1.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_1.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.s
-.PHONY : solver_code/external/amd/src/amd_1.c.s
+solver_code/src/osqp/kkt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/kkt.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.s
+.PHONY : solver_code/src/osqp/kkt.c.s
 
-solver_code/external/amd/src/amd_2.o: solver_code/external/amd/src/amd_2.c.o
-.PHONY : solver_code/external/amd/src/amd_2.o
+solver_code/src/osqp/lin_alg.o: solver_code/src/osqp/lin_alg.c.o
+.PHONY : solver_code/src/osqp/lin_alg.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_2.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o
-.PHONY : solver_code/external/amd/src/amd_2.c.o
+solver_code/src/osqp/lin_alg.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/lin_alg.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o
+.PHONY : solver_code/src/osqp/lin_alg.c.o
 
-solver_code/external/amd/src/amd_2.i: solver_code/external/amd/src/amd_2.c.i
-.PHONY : solver_code/external/amd/src/amd_2.i
+solver_code/src/osqp/lin_alg.i: solver_code/src/osqp/lin_alg.c.i
+.PHONY : solver_code/src/osqp/lin_alg.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_2.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.i
-.PHONY : solver_code/external/amd/src/amd_2.c.i
+solver_code/src/osqp/lin_alg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/lin_alg.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.i
+.PHONY : solver_code/src/osqp/lin_alg.c.i
 
-solver_code/external/amd/src/amd_2.s: solver_code/external/amd/src/amd_2.c.s
-.PHONY : solver_code/external/amd/src/amd_2.s
+solver_code/src/osqp/lin_alg.s: solver_code/src/osqp/lin_alg.c.s
+.PHONY : solver_code/src/osqp/lin_alg.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_2.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.s
-.PHONY : solver_code/external/amd/src/amd_2.c.s
+solver_code/src/osqp/lin_alg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/lin_alg.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.s
+.PHONY : solver_code/src/osqp/lin_alg.c.s
 
-solver_code/external/amd/src/amd_aat.o: solver_code/external/amd/src/amd_aat.c.o
-.PHONY : solver_code/external/amd/src/amd_aat.o
+solver_code/src/osqp/osqp.o: solver_code/src/osqp/osqp.c.o
+.PHONY : solver_code/src/osqp/osqp.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_aat.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_aat.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o
-.PHONY : solver_code/external/amd/src/amd_aat.c.o
+solver_code/src/osqp/osqp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/osqp.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o
+.PHONY : solver_code/src/osqp/osqp.c.o
 
-solver_code/external/amd/src/amd_aat.i: solver_code/external/amd/src/amd_aat.c.i
-.PHONY : solver_code/external/amd/src/amd_aat.i
+solver_code/src/osqp/osqp.i: solver_code/src/osqp/osqp.c.i
+.PHONY : solver_code/src/osqp/osqp.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_aat.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_aat.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.i
-.PHONY : solver_code/external/amd/src/amd_aat.c.i
+solver_code/src/osqp/osqp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/osqp.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.i
+.PHONY : solver_code/src/osqp/osqp.c.i
 
-solver_code/external/amd/src/amd_aat.s: solver_code/external/amd/src/amd_aat.c.s
-.PHONY : solver_code/external/amd/src/amd_aat.s
+solver_code/src/osqp/osqp.s: solver_code/src/osqp/osqp.c.s
+.PHONY : solver_code/src/osqp/osqp.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_aat.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_aat.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.s
-.PHONY : solver_code/external/amd/src/amd_aat.c.s
+solver_code/src/osqp/osqp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/osqp.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.s
+.PHONY : solver_code/src/osqp/osqp.c.s
 
-solver_code/external/amd/src/amd_control.o: solver_code/external/amd/src/amd_control.c.o
-.PHONY : solver_code/external/amd/src/amd_control.o
+solver_code/src/osqp/proj.o: solver_code/src/osqp/proj.c.o
+.PHONY : solver_code/src/osqp/proj.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_control.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_control.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o
-.PHONY : solver_code/external/amd/src/amd_control.c.o
+solver_code/src/osqp/proj.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/proj.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o
+.PHONY : solver_code/src/osqp/proj.c.o
 
-solver_code/external/amd/src/amd_control.i: solver_code/external/amd/src/amd_control.c.i
-.PHONY : solver_code/external/amd/src/amd_control.i
+solver_code/src/osqp/proj.i: solver_code/src/osqp/proj.c.i
+.PHONY : solver_code/src/osqp/proj.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_control.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_control.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.i
-.PHONY : solver_code/external/amd/src/amd_control.c.i
+solver_code/src/osqp/proj.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/proj.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.i
+.PHONY : solver_code/src/osqp/proj.c.i
 
-solver_code/external/amd/src/amd_control.s: solver_code/external/amd/src/amd_control.c.s
-.PHONY : solver_code/external/amd/src/amd_control.s
+solver_code/src/osqp/proj.s: solver_code/src/osqp/proj.c.s
+.PHONY : solver_code/src/osqp/proj.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_control.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_control.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.s
-.PHONY : solver_code/external/amd/src/amd_control.c.s
+solver_code/src/osqp/proj.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/proj.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.s
+.PHONY : solver_code/src/osqp/proj.c.s
 
-solver_code/external/amd/src/amd_defaults.o: solver_code/external/amd/src/amd_defaults.c.o
-.PHONY : solver_code/external/amd/src/amd_defaults.o
+solver_code/src/osqp/qdldl.o: solver_code/src/osqp/qdldl.c.o
+.PHONY : solver_code/src/osqp/qdldl.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_defaults.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_defaults.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o
-.PHONY : solver_code/external/amd/src/amd_defaults.c.o
+solver_code/src/osqp/qdldl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/qdldl.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o
+.PHONY : solver_code/src/osqp/qdldl.c.o
 
-solver_code/external/amd/src/amd_defaults.i: solver_code/external/amd/src/amd_defaults.c.i
-.PHONY : solver_code/external/amd/src/amd_defaults.i
+solver_code/src/osqp/qdldl.i: solver_code/src/osqp/qdldl.c.i
+.PHONY : solver_code/src/osqp/qdldl.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_defaults.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_defaults.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.i
-.PHONY : solver_code/external/amd/src/amd_defaults.c.i
+solver_code/src/osqp/qdldl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/qdldl.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.i
+.PHONY : solver_code/src/osqp/qdldl.c.i
 
-solver_code/external/amd/src/amd_defaults.s: solver_code/external/amd/src/amd_defaults.c.s
-.PHONY : solver_code/external/amd/src/amd_defaults.s
+solver_code/src/osqp/qdldl.s: solver_code/src/osqp/qdldl.c.s
+.PHONY : solver_code/src/osqp/qdldl.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_defaults.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_defaults.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.s
-.PHONY : solver_code/external/amd/src/amd_defaults.c.s
+solver_code/src/osqp/qdldl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/qdldl.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.s
+.PHONY : solver_code/src/osqp/qdldl.c.s
 
-solver_code/external/amd/src/amd_dump.o: solver_code/external/amd/src/amd_dump.c.o
-.PHONY : solver_code/external/amd/src/amd_dump.o
+solver_code/src/osqp/qdldl_interface.o: solver_code/src/osqp/qdldl_interface.c.o
+.PHONY : solver_code/src/osqp/qdldl_interface.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_dump.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_dump.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o
-.PHONY : solver_code/external/amd/src/amd_dump.c.o
+solver_code/src/osqp/qdldl_interface.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/qdldl_interface.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o
+.PHONY : solver_code/src/osqp/qdldl_interface.c.o
 
-solver_code/external/amd/src/amd_dump.i: solver_code/external/amd/src/amd_dump.c.i
-.PHONY : solver_code/external/amd/src/amd_dump.i
+solver_code/src/osqp/qdldl_interface.i: solver_code/src/osqp/qdldl_interface.c.i
+.PHONY : solver_code/src/osqp/qdldl_interface.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_dump.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_dump.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.i
-.PHONY : solver_code/external/amd/src/amd_dump.c.i
+solver_code/src/osqp/qdldl_interface.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/qdldl_interface.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.i
+.PHONY : solver_code/src/osqp/qdldl_interface.c.i
 
-solver_code/external/amd/src/amd_dump.s: solver_code/external/amd/src/amd_dump.c.s
-.PHONY : solver_code/external/amd/src/amd_dump.s
+solver_code/src/osqp/qdldl_interface.s: solver_code/src/osqp/qdldl_interface.c.s
+.PHONY : solver_code/src/osqp/qdldl_interface.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_dump.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_dump.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.s
-.PHONY : solver_code/external/amd/src/amd_dump.c.s
+solver_code/src/osqp/qdldl_interface.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/qdldl_interface.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.s
+.PHONY : solver_code/src/osqp/qdldl_interface.c.s
 
-solver_code/external/amd/src/amd_global.o: solver_code/external/amd/src/amd_global.c.o
-.PHONY : solver_code/external/amd/src/amd_global.o
+solver_code/src/osqp/scaling.o: solver_code/src/osqp/scaling.c.o
+.PHONY : solver_code/src/osqp/scaling.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_global.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_global.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o
-.PHONY : solver_code/external/amd/src/amd_global.c.o
+solver_code/src/osqp/scaling.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/scaling.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o
+.PHONY : solver_code/src/osqp/scaling.c.o
 
-solver_code/external/amd/src/amd_global.i: solver_code/external/amd/src/amd_global.c.i
-.PHONY : solver_code/external/amd/src/amd_global.i
+solver_code/src/osqp/scaling.i: solver_code/src/osqp/scaling.c.i
+.PHONY : solver_code/src/osqp/scaling.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_global.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_global.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.i
-.PHONY : solver_code/external/amd/src/amd_global.c.i
+solver_code/src/osqp/scaling.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/scaling.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.i
+.PHONY : solver_code/src/osqp/scaling.c.i
 
-solver_code/external/amd/src/amd_global.s: solver_code/external/amd/src/amd_global.c.s
-.PHONY : solver_code/external/amd/src/amd_global.s
+solver_code/src/osqp/scaling.s: solver_code/src/osqp/scaling.c.s
+.PHONY : solver_code/src/osqp/scaling.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_global.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_global.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.s
-.PHONY : solver_code/external/amd/src/amd_global.c.s
+solver_code/src/osqp/scaling.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/scaling.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.s
+.PHONY : solver_code/src/osqp/scaling.c.s
 
-solver_code/external/amd/src/amd_info.o: solver_code/external/amd/src/amd_info.c.o
-.PHONY : solver_code/external/amd/src/amd_info.o
+solver_code/src/osqp/util.o: solver_code/src/osqp/util.c.o
+.PHONY : solver_code/src/osqp/util.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_info.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_info.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o
-.PHONY : solver_code/external/amd/src/amd_info.c.o
+solver_code/src/osqp/util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/util.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o
+.PHONY : solver_code/src/osqp/util.c.o
 
-solver_code/external/amd/src/amd_info.i: solver_code/external/amd/src/amd_info.c.i
-.PHONY : solver_code/external/amd/src/amd_info.i
+solver_code/src/osqp/util.i: solver_code/src/osqp/util.c.i
+.PHONY : solver_code/src/osqp/util.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_info.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_info.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.i
-.PHONY : solver_code/external/amd/src/amd_info.c.i
+solver_code/src/osqp/util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/util.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.i
+.PHONY : solver_code/src/osqp/util.c.i
 
-solver_code/external/amd/src/amd_info.s: solver_code/external/amd/src/amd_info.c.s
-.PHONY : solver_code/external/amd/src/amd_info.s
+solver_code/src/osqp/util.s: solver_code/src/osqp/util.c.s
+.PHONY : solver_code/src/osqp/util.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_info.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_info.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.s
-.PHONY : solver_code/external/amd/src/amd_info.c.s
+solver_code/src/osqp/util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/util.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.s
+.PHONY : solver_code/src/osqp/util.c.s
 
-solver_code/external/amd/src/amd_order.o: solver_code/external/amd/src/amd_order.c.o
-.PHONY : solver_code/external/amd/src/amd_order.o
+solver_code/src/osqp/workspace.o: solver_code/src/osqp/workspace.c.o
+.PHONY : solver_code/src/osqp/workspace.o
 
 # target to build an object file
-solver_code/external/amd/src/amd_order.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_order.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o
-.PHONY : solver_code/external/amd/src/amd_order.c.o
+solver_code/src/osqp/workspace.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/workspace.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o
+.PHONY : solver_code/src/osqp/workspace.c.o
 
-solver_code/external/amd/src/amd_order.i: solver_code/external/amd/src/amd_order.c.i
-.PHONY : solver_code/external/amd/src/amd_order.i
-
-# target to preprocess a source file
-solver_code/external/amd/src/amd_order.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_order.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.i
-.PHONY : solver_code/external/amd/src/amd_order.c.i
-
-solver_code/external/amd/src/amd_order.s: solver_code/external/amd/src/amd_order.c.s
-.PHONY : solver_code/external/amd/src/amd_order.s
-
-# target to generate assembly for a file
-solver_code/external/amd/src/amd_order.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_order.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.s
-.PHONY : solver_code/external/amd/src/amd_order.c.s
-
-solver_code/external/amd/src/amd_post_tree.o: solver_code/external/amd/src/amd_post_tree.c.o
-.PHONY : solver_code/external/amd/src/amd_post_tree.o
-
-# target to build an object file
-solver_code/external/amd/src/amd_post_tree.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_post_tree.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o
-.PHONY : solver_code/external/amd/src/amd_post_tree.c.o
-
-solver_code/external/amd/src/amd_post_tree.i: solver_code/external/amd/src/amd_post_tree.c.i
-.PHONY : solver_code/external/amd/src/amd_post_tree.i
+solver_code/src/osqp/workspace.i: solver_code/src/osqp/workspace.c.i
+.PHONY : solver_code/src/osqp/workspace.i
 
 # target to preprocess a source file
-solver_code/external/amd/src/amd_post_tree.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_post_tree.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.i
-.PHONY : solver_code/external/amd/src/amd_post_tree.c.i
+solver_code/src/osqp/workspace.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/workspace.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.i
+.PHONY : solver_code/src/osqp/workspace.c.i
 
-solver_code/external/amd/src/amd_post_tree.s: solver_code/external/amd/src/amd_post_tree.c.s
-.PHONY : solver_code/external/amd/src/amd_post_tree.s
-
-# target to generate assembly for a file
-solver_code/external/amd/src/amd_post_tree.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_post_tree.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.s
-.PHONY : solver_code/external/amd/src/amd_post_tree.c.s
-
-solver_code/external/amd/src/amd_postorder.o: solver_code/external/amd/src/amd_postorder.c.o
-.PHONY : solver_code/external/amd/src/amd_postorder.o
-
-# target to build an object file
-solver_code/external/amd/src/amd_postorder.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_postorder.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o
-.PHONY : solver_code/external/amd/src/amd_postorder.c.o
-
-solver_code/external/amd/src/amd_postorder.i: solver_code/external/amd/src/amd_postorder.c.i
-.PHONY : solver_code/external/amd/src/amd_postorder.i
-
-# target to preprocess a source file
-solver_code/external/amd/src/amd_postorder.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_postorder.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.i
-.PHONY : solver_code/external/amd/src/amd_postorder.c.i
-
-solver_code/external/amd/src/amd_postorder.s: solver_code/external/amd/src/amd_postorder.c.s
-.PHONY : solver_code/external/amd/src/amd_postorder.s
+solver_code/src/osqp/workspace.s: solver_code/src/osqp/workspace.c.s
+.PHONY : solver_code/src/osqp/workspace.s
 
 # target to generate assembly for a file
-solver_code/external/amd/src/amd_postorder.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_postorder.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.s
-.PHONY : solver_code/external/amd/src/amd_postorder.c.s
-
-solver_code/external/amd/src/amd_preprocess.o: solver_code/external/amd/src/amd_preprocess.c.o
-.PHONY : solver_code/external/amd/src/amd_preprocess.o
-
-# target to build an object file
-solver_code/external/amd/src/amd_preprocess.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_preprocess.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o
-.PHONY : solver_code/external/amd/src/amd_preprocess.c.o
-
-solver_code/external/amd/src/amd_preprocess.i: solver_code/external/amd/src/amd_preprocess.c.i
-.PHONY : solver_code/external/amd/src/amd_preprocess.i
-
-# target to preprocess a source file
-solver_code/external/amd/src/amd_preprocess.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_preprocess.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.i
-.PHONY : solver_code/external/amd/src/amd_preprocess.c.i
-
-solver_code/external/amd/src/amd_preprocess.s: solver_code/external/amd/src/amd_preprocess.c.s
-.PHONY : solver_code/external/amd/src/amd_preprocess.s
-
-# target to generate assembly for a file
-solver_code/external/amd/src/amd_preprocess.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_preprocess.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.s
-.PHONY : solver_code/external/amd/src/amd_preprocess.c.s
-
-solver_code/external/amd/src/amd_valid.o: solver_code/external/amd/src/amd_valid.c.o
-.PHONY : solver_code/external/amd/src/amd_valid.o
-
-# target to build an object file
-solver_code/external/amd/src/amd_valid.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_valid.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o
-.PHONY : solver_code/external/amd/src/amd_valid.c.o
-
-solver_code/external/amd/src/amd_valid.i: solver_code/external/amd/src/amd_valid.c.i
-.PHONY : solver_code/external/amd/src/amd_valid.i
-
-# target to preprocess a source file
-solver_code/external/amd/src/amd_valid.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_valid.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.i
-.PHONY : solver_code/external/amd/src/amd_valid.c.i
-
-solver_code/external/amd/src/amd_valid.s: solver_code/external/amd/src/amd_valid.c.s
-.PHONY : solver_code/external/amd/src/amd_valid.s
-
-# target to generate assembly for a file
-solver_code/external/amd/src/amd_valid.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/amd/src/amd_valid.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.s
-.PHONY : solver_code/external/amd/src/amd_valid.c.s
-
-solver_code/external/ldl/src/ldl.o: solver_code/external/ldl/src/ldl.c.o
-.PHONY : solver_code/external/ldl/src/ldl.o
-
-# target to build an object file
-solver_code/external/ldl/src/ldl.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/ldl/src/ldl.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o
-.PHONY : solver_code/external/ldl/src/ldl.c.o
-
-solver_code/external/ldl/src/ldl.i: solver_code/external/ldl/src/ldl.c.i
-.PHONY : solver_code/external/ldl/src/ldl.i
-
-# target to preprocess a source file
-solver_code/external/ldl/src/ldl.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/ldl/src/ldl.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.i
-.PHONY : solver_code/external/ldl/src/ldl.c.i
-
-solver_code/external/ldl/src/ldl.s: solver_code/external/ldl/src/ldl.c.s
-.PHONY : solver_code/external/ldl/src/ldl.s
-
-# target to generate assembly for a file
-solver_code/external/ldl/src/ldl.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/external/ldl/src/ldl.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.s
-.PHONY : solver_code/external/ldl/src/ldl.c.s
-
-solver_code/src/cone.o: solver_code/src/cone.c.o
-.PHONY : solver_code/src/cone.o
-
-# target to build an object file
-solver_code/src/cone.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/cone.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/cone.c.o
-.PHONY : solver_code/src/cone.c.o
-
-solver_code/src/cone.i: solver_code/src/cone.c.i
-.PHONY : solver_code/src/cone.i
-
-# target to preprocess a source file
-solver_code/src/cone.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/cone.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/cone.c.i
-.PHONY : solver_code/src/cone.c.i
-
-solver_code/src/cone.s: solver_code/src/cone.c.s
-.PHONY : solver_code/src/cone.s
-
-# target to generate assembly for a file
-solver_code/src/cone.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/cone.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/cone.c.s
-.PHONY : solver_code/src/cone.c.s
-
-solver_code/src/ctrlc.o: solver_code/src/ctrlc.c.o
-.PHONY : solver_code/src/ctrlc.o
-
-# target to build an object file
-solver_code/src/ctrlc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/ctrlc.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o
-.PHONY : solver_code/src/ctrlc.c.o
-
-solver_code/src/ctrlc.i: solver_code/src/ctrlc.c.i
-.PHONY : solver_code/src/ctrlc.i
-
-# target to preprocess a source file
-solver_code/src/ctrlc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/ctrlc.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.i
-.PHONY : solver_code/src/ctrlc.c.i
-
-solver_code/src/ctrlc.s: solver_code/src/ctrlc.c.s
-.PHONY : solver_code/src/ctrlc.s
-
-# target to generate assembly for a file
-solver_code/src/ctrlc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/ctrlc.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.s
-.PHONY : solver_code/src/ctrlc.c.s
-
-solver_code/src/ecos.o: solver_code/src/ecos.c.o
-.PHONY : solver_code/src/ecos.o
-
-# target to build an object file
-solver_code/src/ecos.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/ecos.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/ecos.c.o
-.PHONY : solver_code/src/ecos.c.o
-
-solver_code/src/ecos.i: solver_code/src/ecos.c.i
-.PHONY : solver_code/src/ecos.i
-
-# target to preprocess a source file
-solver_code/src/ecos.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/ecos.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/ecos.c.i
-.PHONY : solver_code/src/ecos.c.i
-
-solver_code/src/ecos.s: solver_code/src/ecos.c.s
-.PHONY : solver_code/src/ecos.s
-
-# target to generate assembly for a file
-solver_code/src/ecos.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/ecos.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/ecos.c.s
-.PHONY : solver_code/src/ecos.c.s
-
-solver_code/src/equil.o: solver_code/src/equil.c.o
-.PHONY : solver_code/src/equil.o
-
-# target to build an object file
-solver_code/src/equil.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/equil.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/equil.c.o
-.PHONY : solver_code/src/equil.c.o
-
-solver_code/src/equil.i: solver_code/src/equil.c.i
-.PHONY : solver_code/src/equil.i
-
-# target to preprocess a source file
-solver_code/src/equil.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/equil.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/equil.c.i
-.PHONY : solver_code/src/equil.c.i
-
-solver_code/src/equil.s: solver_code/src/equil.c.s
-.PHONY : solver_code/src/equil.s
-
-# target to generate assembly for a file
-solver_code/src/equil.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/equil.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/equil.c.s
-.PHONY : solver_code/src/equil.c.s
-
-solver_code/src/expcone.o: solver_code/src/expcone.c.o
-.PHONY : solver_code/src/expcone.o
-
-# target to build an object file
-solver_code/src/expcone.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/expcone.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/expcone.c.o
-.PHONY : solver_code/src/expcone.c.o
-
-solver_code/src/expcone.i: solver_code/src/expcone.c.i
-.PHONY : solver_code/src/expcone.i
-
-# target to preprocess a source file
-solver_code/src/expcone.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/expcone.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/expcone.c.i
-.PHONY : solver_code/src/expcone.c.i
-
-solver_code/src/expcone.s: solver_code/src/expcone.c.s
-.PHONY : solver_code/src/expcone.s
-
-# target to generate assembly for a file
-solver_code/src/expcone.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/expcone.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/expcone.c.s
-.PHONY : solver_code/src/expcone.c.s
-
-solver_code/src/kkt.o: solver_code/src/kkt.c.o
-.PHONY : solver_code/src/kkt.o
-
-# target to build an object file
-solver_code/src/kkt.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/kkt.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/kkt.c.o
-.PHONY : solver_code/src/kkt.c.o
-
-solver_code/src/kkt.i: solver_code/src/kkt.c.i
-.PHONY : solver_code/src/kkt.i
-
-# target to preprocess a source file
-solver_code/src/kkt.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/kkt.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/kkt.c.i
-.PHONY : solver_code/src/kkt.c.i
-
-solver_code/src/kkt.s: solver_code/src/kkt.c.s
-.PHONY : solver_code/src/kkt.s
-
-# target to generate assembly for a file
-solver_code/src/kkt.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/kkt.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/kkt.c.s
-.PHONY : solver_code/src/kkt.c.s
-
-solver_code/src/preproc.o: solver_code/src/preproc.c.o
-.PHONY : solver_code/src/preproc.o
-
-# target to build an object file
-solver_code/src/preproc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/preproc.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/preproc.c.o
-.PHONY : solver_code/src/preproc.c.o
-
-solver_code/src/preproc.i: solver_code/src/preproc.c.i
-.PHONY : solver_code/src/preproc.i
-
-# target to preprocess a source file
-solver_code/src/preproc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/preproc.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/preproc.c.i
-.PHONY : solver_code/src/preproc.c.i
-
-solver_code/src/preproc.s: solver_code/src/preproc.c.s
-.PHONY : solver_code/src/preproc.s
-
-# target to generate assembly for a file
-solver_code/src/preproc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/preproc.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/preproc.c.s
-.PHONY : solver_code/src/preproc.c.s
-
-solver_code/src/spla.o: solver_code/src/spla.c.o
-.PHONY : solver_code/src/spla.o
-
-# target to build an object file
-solver_code/src/spla.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/spla.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/spla.c.o
-.PHONY : solver_code/src/spla.c.o
-
-solver_code/src/spla.i: solver_code/src/spla.c.i
-.PHONY : solver_code/src/spla.i
-
-# target to preprocess a source file
-solver_code/src/spla.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/spla.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/spla.c.i
-.PHONY : solver_code/src/spla.c.i
-
-solver_code/src/spla.s: solver_code/src/spla.c.s
-.PHONY : solver_code/src/spla.s
-
-# target to generate assembly for a file
-solver_code/src/spla.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/spla.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/spla.c.s
-.PHONY : solver_code/src/spla.c.s
-
-solver_code/src/splamm.o: solver_code/src/splamm.c.o
-.PHONY : solver_code/src/splamm.o
-
-# target to build an object file
-solver_code/src/splamm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/splamm.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/splamm.c.o
-.PHONY : solver_code/src/splamm.c.o
-
-solver_code/src/splamm.i: solver_code/src/splamm.c.i
-.PHONY : solver_code/src/splamm.i
-
-# target to preprocess a source file
-solver_code/src/splamm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/splamm.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/splamm.c.i
-.PHONY : solver_code/src/splamm.c.i
-
-solver_code/src/splamm.s: solver_code/src/splamm.c.s
-.PHONY : solver_code/src/splamm.s
-
-# target to generate assembly for a file
-solver_code/src/splamm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/splamm.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/splamm.c.s
-.PHONY : solver_code/src/splamm.c.s
-
-solver_code/src/timer.o: solver_code/src/timer.c.o
-.PHONY : solver_code/src/timer.o
-
-# target to build an object file
-solver_code/src/timer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/timer.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/timer.c.o
-.PHONY : solver_code/src/timer.c.o
-
-solver_code/src/timer.i: solver_code/src/timer.c.i
-.PHONY : solver_code/src/timer.i
-
-# target to preprocess a source file
-solver_code/src/timer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/timer.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/timer.c.i
-.PHONY : solver_code/src/timer.c.i
-
-solver_code/src/timer.s: solver_code/src/timer.c.s
-.PHONY : solver_code/src/timer.s
-
-# target to generate assembly for a file
-solver_code/src/timer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/timer.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/timer.c.s
-.PHONY : solver_code/src/timer.c.s
-
-solver_code/src/wright_omega.o: solver_code/src/wright_omega.c.o
-.PHONY : solver_code/src/wright_omega.o
-
-# target to build an object file
-solver_code/src/wright_omega.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/wright_omega.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o
-.PHONY : solver_code/src/wright_omega.c.o
-
-solver_code/src/wright_omega.i: solver_code/src/wright_omega.c.i
-.PHONY : solver_code/src/wright_omega.i
-
-# target to preprocess a source file
-solver_code/src/wright_omega.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/wright_omega.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.i
-.PHONY : solver_code/src/wright_omega.c.i
-
-solver_code/src/wright_omega.s: solver_code/src/wright_omega.c.s
-.PHONY : solver_code/src/wright_omega.s
-
-# target to generate assembly for a file
-solver_code/src/wright_omega.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/wright_omega.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.s
-.PHONY : solver_code/src/wright_omega.c.s
+solver_code/src/osqp/workspace.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg_example.dir/build.make CMakeFiles/cpg_example.dir/solver_code/src/osqp/workspace.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpg.dir/build.make CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.s
+.PHONY : solver_code/src/osqp/workspace.c.s
 
 src/cpg_example.o: src/cpg_example.c.o
 .PHONY : src/cpg_example.o
@@ -959,87 +553,41 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... cpg"
 	@echo "... cpg_example"
-	@echo "... solver_code/ecos_bb/ecos_bb.o"
-	@echo "... solver_code/ecos_bb/ecos_bb.i"
-	@echo "... solver_code/ecos_bb/ecos_bb.s"
-	@echo "... solver_code/ecos_bb/ecos_bb_preproc.o"
-	@echo "... solver_code/ecos_bb/ecos_bb_preproc.i"
-	@echo "... solver_code/ecos_bb/ecos_bb_preproc.s"
-	@echo "... solver_code/external/amd/src/amd_1.o"
-	@echo "... solver_code/external/amd/src/amd_1.i"
-	@echo "... solver_code/external/amd/src/amd_1.s"
-	@echo "... solver_code/external/amd/src/amd_2.o"
-	@echo "... solver_code/external/amd/src/amd_2.i"
-	@echo "... solver_code/external/amd/src/amd_2.s"
-	@echo "... solver_code/external/amd/src/amd_aat.o"
-	@echo "... solver_code/external/amd/src/amd_aat.i"
-	@echo "... solver_code/external/amd/src/amd_aat.s"
-	@echo "... solver_code/external/amd/src/amd_control.o"
-	@echo "... solver_code/external/amd/src/amd_control.i"
-	@echo "... solver_code/external/amd/src/amd_control.s"
-	@echo "... solver_code/external/amd/src/amd_defaults.o"
-	@echo "... solver_code/external/amd/src/amd_defaults.i"
-	@echo "... solver_code/external/amd/src/amd_defaults.s"
-	@echo "... solver_code/external/amd/src/amd_dump.o"
-	@echo "... solver_code/external/amd/src/amd_dump.i"
-	@echo "... solver_code/external/amd/src/amd_dump.s"
-	@echo "... solver_code/external/amd/src/amd_global.o"
-	@echo "... solver_code/external/amd/src/amd_global.i"
-	@echo "... solver_code/external/amd/src/amd_global.s"
-	@echo "... solver_code/external/amd/src/amd_info.o"
-	@echo "... solver_code/external/amd/src/amd_info.i"
-	@echo "... solver_code/external/amd/src/amd_info.s"
-	@echo "... solver_code/external/amd/src/amd_order.o"
-	@echo "... solver_code/external/amd/src/amd_order.i"
-	@echo "... solver_code/external/amd/src/amd_order.s"
-	@echo "... solver_code/external/amd/src/amd_post_tree.o"
-	@echo "... solver_code/external/amd/src/amd_post_tree.i"
-	@echo "... solver_code/external/amd/src/amd_post_tree.s"
-	@echo "... solver_code/external/amd/src/amd_postorder.o"
-	@echo "... solver_code/external/amd/src/amd_postorder.i"
-	@echo "... solver_code/external/amd/src/amd_postorder.s"
-	@echo "... solver_code/external/amd/src/amd_preprocess.o"
-	@echo "... solver_code/external/amd/src/amd_preprocess.i"
-	@echo "... solver_code/external/amd/src/amd_preprocess.s"
-	@echo "... solver_code/external/amd/src/amd_valid.o"
-	@echo "... solver_code/external/amd/src/amd_valid.i"
-	@echo "... solver_code/external/amd/src/amd_valid.s"
-	@echo "... solver_code/external/ldl/src/ldl.o"
-	@echo "... solver_code/external/ldl/src/ldl.i"
-	@echo "... solver_code/external/ldl/src/ldl.s"
-	@echo "... solver_code/src/cone.o"
-	@echo "... solver_code/src/cone.i"
-	@echo "... solver_code/src/cone.s"
-	@echo "... solver_code/src/ctrlc.o"
-	@echo "... solver_code/src/ctrlc.i"
-	@echo "... solver_code/src/ctrlc.s"
-	@echo "... solver_code/src/ecos.o"
-	@echo "... solver_code/src/ecos.i"
-	@echo "... solver_code/src/ecos.s"
-	@echo "... solver_code/src/equil.o"
-	@echo "... solver_code/src/equil.i"
-	@echo "... solver_code/src/equil.s"
-	@echo "... solver_code/src/expcone.o"
-	@echo "... solver_code/src/expcone.i"
-	@echo "... solver_code/src/expcone.s"
-	@echo "... solver_code/src/kkt.o"
-	@echo "... solver_code/src/kkt.i"
-	@echo "... solver_code/src/kkt.s"
-	@echo "... solver_code/src/preproc.o"
-	@echo "... solver_code/src/preproc.i"
-	@echo "... solver_code/src/preproc.s"
-	@echo "... solver_code/src/spla.o"
-	@echo "... solver_code/src/spla.i"
-	@echo "... solver_code/src/spla.s"
-	@echo "... solver_code/src/splamm.o"
-	@echo "... solver_code/src/splamm.i"
-	@echo "... solver_code/src/splamm.s"
-	@echo "... solver_code/src/timer.o"
-	@echo "... solver_code/src/timer.i"
-	@echo "... solver_code/src/timer.s"
-	@echo "... solver_code/src/wright_omega.o"
-	@echo "... solver_code/src/wright_omega.i"
-	@echo "... solver_code/src/wright_omega.s"
+	@echo "... emosqpstatic"
+	@echo "... example"
+	@echo "... solver_code/src/osqp/auxil.o"
+	@echo "... solver_code/src/osqp/auxil.i"
+	@echo "... solver_code/src/osqp/auxil.s"
+	@echo "... solver_code/src/osqp/error.o"
+	@echo "... solver_code/src/osqp/error.i"
+	@echo "... solver_code/src/osqp/error.s"
+	@echo "... solver_code/src/osqp/kkt.o"
+	@echo "... solver_code/src/osqp/kkt.i"
+	@echo "... solver_code/src/osqp/kkt.s"
+	@echo "... solver_code/src/osqp/lin_alg.o"
+	@echo "... solver_code/src/osqp/lin_alg.i"
+	@echo "... solver_code/src/osqp/lin_alg.s"
+	@echo "... solver_code/src/osqp/osqp.o"
+	@echo "... solver_code/src/osqp/osqp.i"
+	@echo "... solver_code/src/osqp/osqp.s"
+	@echo "... solver_code/src/osqp/proj.o"
+	@echo "... solver_code/src/osqp/proj.i"
+	@echo "... solver_code/src/osqp/proj.s"
+	@echo "... solver_code/src/osqp/qdldl.o"
+	@echo "... solver_code/src/osqp/qdldl.i"
+	@echo "... solver_code/src/osqp/qdldl.s"
+	@echo "... solver_code/src/osqp/qdldl_interface.o"
+	@echo "... solver_code/src/osqp/qdldl_interface.i"
+	@echo "... solver_code/src/osqp/qdldl_interface.s"
+	@echo "... solver_code/src/osqp/scaling.o"
+	@echo "... solver_code/src/osqp/scaling.i"
+	@echo "... solver_code/src/osqp/scaling.s"
+	@echo "... solver_code/src/osqp/util.o"
+	@echo "... solver_code/src/osqp/util.i"
+	@echo "... solver_code/src/osqp/util.s"
+	@echo "... solver_code/src/osqp/workspace.o"
+	@echo "... solver_code/src/osqp/workspace.i"
+	@echo "... solver_code/src/osqp/workspace.s"
 	@echo "... src/cpg_example.o"
 	@echo "... src/cpg_example.i"
 	@echo "... src/cpg_example.s"

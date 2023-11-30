@@ -12,6 +12,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.25.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.25.2/CMakeSystem.cmake"
   "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/CMakeLists.txt"
+  "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/configure/osqp_configure.h.in"
+  "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/configure/qdldl_types.h.in"
+  "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/CMakeLists.txt"
+  "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/CMakeLists.txt"
   "/home/jiatao/anaconda3/envs/slip_jumping/lib/python3.7/site-packages/cmake/data/share/cmake-3.25/Modules/CMakeCCompiler.cmake.in"
   "/home/jiatao/anaconda3/envs/slip_jumping/lib/python3.7/site-packages/cmake/data/share/cmake-3.25/Modules/CMakeCCompilerABI.c"
   "/home/jiatao/anaconda3/envs/slip_jumping/lib/python3.7/site-packages/cmake/data/share/cmake-3.25/Modules/CMakeCInformation.cmake"
@@ -120,11 +124,17 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.25.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.25.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/qdldl_types.h"
+  "/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/include/osqp_configure.h"
   "solver_code/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "solver_code/src/osqp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "solver_code/include/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cpg_example.dir/DependInfo.cmake"
   "CMakeFiles/cpg.dir/DependInfo.cmake"
+  "solver_code/CMakeFiles/emosqpstatic.dir/DependInfo.cmake"
+  "solver_code/CMakeFiles/example.dir/DependInfo.cmake"
   )

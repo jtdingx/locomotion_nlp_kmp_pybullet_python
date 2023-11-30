@@ -2,5 +2,11 @@
 /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles/cpg.dir
 /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles/edit_cache.dir
 /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles/rebuild_cache.dir
+/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/CMakeFiles/emosqpstatic.dir
+/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/CMakeFiles/example.dir
 /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/CMakeFiles/edit_cache.dir
 /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/CMakeFiles/rebuild_cache.dir
+/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/src/osqp/CMakeFiles/edit_cache.dir
+/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/src/osqp/CMakeFiles/rebuild_cache.dir
+/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/include/CMakeFiles/edit_cache.dir
+/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/solver_code/include/CMakeFiles/rebuild_cache.dir

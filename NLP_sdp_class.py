@@ -1122,7 +1122,10 @@ class NLP:
                 com_inte[0, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempx))
                 com_inte[1, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempy))
                 com_inte[2, i] = np.dot(t_a_plan, np.dot(AAA_inv, tempz))
-
+                t_a_planv = np.array([[3*pow((2+i) * dt_sample, 2), 2*pow((2+i) * dt_sample, 1), 1, 0]]) 
+                com_inte[3, i] = np.dot(t_a_planv, np.dot(AAA_inv, tempx))
+                com_inte[4, i] = np.dot(t_a_planv, np.dot(AAA_inv, tempy))
+                com_inte[5, i] = np.dot(t_a_planv, np.dot(AAA_inv, tempz))                
 
         else:
             for i in range(mpc_horizon):

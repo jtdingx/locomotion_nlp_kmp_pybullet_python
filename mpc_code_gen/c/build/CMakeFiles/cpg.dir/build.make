@@ -97,451 +97,195 @@ CMakeFiles/cpg.dir/src/cpg_solve.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/src/cpg_solve.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/src/cpg_solve.c -o CMakeFiles/cpg.dir/src/cpg_solve.c.s
 
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_1.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_1.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_1.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_1.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_2.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_2.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_2.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_2.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_aat.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_aat.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_aat.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_aat.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_control.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_control.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_control.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_control.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_defaults.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_defaults.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_defaults.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_defaults.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_dump.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_dump.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_dump.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_dump.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_global.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_global.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_global.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_global.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_info.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_info.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_info.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_info.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_order.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_order.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_order.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_order.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_post_tree.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_post_tree.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_post_tree.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_post_tree.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_postorder.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_postorder.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_postorder.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_postorder.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_preprocess.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_preprocess.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_preprocess.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_preprocess.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_valid.c
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o -MF CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_valid.c
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_valid.c > CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/amd/src/amd_valid.c -o CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.s
-
-CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/ldl/src/ldl.c
-CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o -MF CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o.d -o CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/ldl/src/ldl.c
-
-CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/ldl/src/ldl.c > CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.i
-
-CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/external/ldl/src/ldl.c -o CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/cone.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/cone.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/cone.c
-CMakeFiles/cpg.dir/solver_code/src/cone.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/cpg.dir/solver_code/src/cone.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/cone.c.o -MF CMakeFiles/cpg.dir/solver_code/src/cone.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/cone.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/cone.c
-
-CMakeFiles/cpg.dir/solver_code/src/cone.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/cone.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/cone.c > CMakeFiles/cpg.dir/solver_code/src/cone.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/cone.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/cone.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/cone.c -o CMakeFiles/cpg.dir/solver_code/src/cone.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ctrlc.c
-CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o -MF CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ctrlc.c
-
-CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ctrlc.c > CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ctrlc.c -o CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/ecos.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/ecos.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ecos.c
-CMakeFiles/cpg.dir/solver_code/src/ecos.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/cpg.dir/solver_code/src/ecos.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/ecos.c.o -MF CMakeFiles/cpg.dir/solver_code/src/ecos.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/ecos.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ecos.c
-
-CMakeFiles/cpg.dir/solver_code/src/ecos.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/ecos.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ecos.c > CMakeFiles/cpg.dir/solver_code/src/ecos.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/ecos.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/ecos.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/ecos.c -o CMakeFiles/cpg.dir/solver_code/src/ecos.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/equil.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/equil.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/equil.c
-CMakeFiles/cpg.dir/solver_code/src/equil.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/cpg.dir/solver_code/src/equil.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/equil.c.o -MF CMakeFiles/cpg.dir/solver_code/src/equil.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/equil.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/equil.c
-
-CMakeFiles/cpg.dir/solver_code/src/equil.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/equil.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/equil.c > CMakeFiles/cpg.dir/solver_code/src/equil.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/equil.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/equil.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/equil.c -o CMakeFiles/cpg.dir/solver_code/src/equil.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/expcone.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/expcone.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/expcone.c
-CMakeFiles/cpg.dir/solver_code/src/expcone.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/cpg.dir/solver_code/src/expcone.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/expcone.c.o -MF CMakeFiles/cpg.dir/solver_code/src/expcone.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/expcone.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/expcone.c
-
-CMakeFiles/cpg.dir/solver_code/src/expcone.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/expcone.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/expcone.c > CMakeFiles/cpg.dir/solver_code/src/expcone.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/expcone.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/expcone.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/expcone.c -o CMakeFiles/cpg.dir/solver_code/src/expcone.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/kkt.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/kkt.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/kkt.c
-CMakeFiles/cpg.dir/solver_code/src/kkt.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/cpg.dir/solver_code/src/kkt.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/kkt.c.o -MF CMakeFiles/cpg.dir/solver_code/src/kkt.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/kkt.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/kkt.c
-
-CMakeFiles/cpg.dir/solver_code/src/kkt.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/kkt.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/kkt.c > CMakeFiles/cpg.dir/solver_code/src/kkt.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/kkt.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/kkt.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/kkt.c -o CMakeFiles/cpg.dir/solver_code/src/kkt.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/preproc.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/preproc.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/preproc.c
-CMakeFiles/cpg.dir/solver_code/src/preproc.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/cpg.dir/solver_code/src/preproc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/preproc.c.o -MF CMakeFiles/cpg.dir/solver_code/src/preproc.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/preproc.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/preproc.c
-
-CMakeFiles/cpg.dir/solver_code/src/preproc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/preproc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/preproc.c > CMakeFiles/cpg.dir/solver_code/src/preproc.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/preproc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/preproc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/preproc.c -o CMakeFiles/cpg.dir/solver_code/src/preproc.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/spla.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/spla.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/spla.c
-CMakeFiles/cpg.dir/solver_code/src/spla.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/cpg.dir/solver_code/src/spla.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/spla.c.o -MF CMakeFiles/cpg.dir/solver_code/src/spla.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/spla.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/spla.c
-
-CMakeFiles/cpg.dir/solver_code/src/spla.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/spla.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/spla.c > CMakeFiles/cpg.dir/solver_code/src/spla.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/spla.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/spla.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/spla.c -o CMakeFiles/cpg.dir/solver_code/src/spla.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/splamm.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/splamm.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/splamm.c
-CMakeFiles/cpg.dir/solver_code/src/splamm.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/cpg.dir/solver_code/src/splamm.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/splamm.c.o -MF CMakeFiles/cpg.dir/solver_code/src/splamm.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/splamm.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/splamm.c
-
-CMakeFiles/cpg.dir/solver_code/src/splamm.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/splamm.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/splamm.c > CMakeFiles/cpg.dir/solver_code/src/splamm.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/splamm.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/splamm.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/splamm.c -o CMakeFiles/cpg.dir/solver_code/src/splamm.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/timer.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/timer.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/timer.c
-CMakeFiles/cpg.dir/solver_code/src/timer.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/cpg.dir/solver_code/src/timer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/timer.c.o -MF CMakeFiles/cpg.dir/solver_code/src/timer.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/timer.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/timer.c
-
-CMakeFiles/cpg.dir/solver_code/src/timer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/timer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/timer.c > CMakeFiles/cpg.dir/solver_code/src/timer.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/timer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/timer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/timer.c -o CMakeFiles/cpg.dir/solver_code/src/timer.c.s
-
-CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/wright_omega.c
-CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o -MF CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/wright_omega.c
-
-CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/wright_omega.c > CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.i
-
-CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/wright_omega.c -o CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.s
-
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb.c
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o -MF CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o.d -o CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb.c
-
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb.c > CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.i
-
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb.c -o CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.s
-
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o: CMakeFiles/cpg.dir/flags.make
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb_preproc.c
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o -MF CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o.d -o CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb_preproc.c
-
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb_preproc.c > CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.i
-
-CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/ecos_bb/ecos_bb_preproc.c -o CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.s
+CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/auxil.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/auxil.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/auxil.c > CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/auxil.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/error.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/error.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/error.c > CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/error.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/lin_alg.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/lin_alg.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/lin_alg.c > CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/lin_alg.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/osqp.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/osqp.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/osqp.c > CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/osqp.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/proj.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/proj.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/proj.c > CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/proj.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/scaling.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/scaling.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/scaling.c > CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/scaling.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/util.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/util.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/util.c > CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/util.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/kkt.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/kkt.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/kkt.c > CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/kkt.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/workspace.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/workspace.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/workspace.c > CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/workspace.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl.c > CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.s
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o: CMakeFiles/cpg.dir/flags.make
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o: /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl_interface.c
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o: CMakeFiles/cpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o -MF CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o.d -o CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o -c /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl_interface.c
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl_interface.c > CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.i
+
+CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/solver_code/src/osqp/qdldl_interface.c -o CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.s
 
 # Object files for target cpg
 cpg_OBJECTS = \
 "CMakeFiles/cpg.dir/src/cpg_workspace.c.o" \
 "CMakeFiles/cpg.dir/src/cpg_solve.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o" \
-"CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/cone.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/ecos.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/equil.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/expcone.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/kkt.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/preproc.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/spla.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/splamm.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/timer.c.o" \
-"CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o" \
-"CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o" \
-"CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o"
+"CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o" \
+"CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o"
 
 # External object files for target cpg
 cpg_EXTERNAL_OBJECTS =
 
 out/libcpg.a: CMakeFiles/cpg.dir/src/cpg_workspace.c.o
 out/libcpg.a: CMakeFiles/cpg.dir/src/cpg_solve.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_1.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_2.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_aat.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_control.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_defaults.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_dump.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_global.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_info.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_order.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_post_tree.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_postorder.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_preprocess.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/amd/src/amd_valid.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/external/ldl/src/ldl.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/cone.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/ctrlc.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/ecos.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/equil.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/expcone.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/kkt.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/preproc.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/spla.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/splamm.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/timer.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/wright_omega.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb.c.o
-out/libcpg.a: CMakeFiles/cpg.dir/solver_code/ecos_bb/ecos_bb_preproc.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/auxil.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/error.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/lin_alg.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/osqp.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/proj.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/scaling.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/util.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/kkt.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/workspace.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl.c.o
+out/libcpg.a: CMakeFiles/cpg.dir/solver_code/src/osqp/qdldl_interface.c.o
 out/libcpg.a: CMakeFiles/cpg.dir/build.make
 out/libcpg.a: CMakeFiles/cpg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking C static library out/libcpg.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jiatao/Documents/GitHub/locomotion_nlp_kmp_pybullet_python/mpc_code_gen/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C static library out/libcpg.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/cpg.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpg.dir/link.txt --verbose=$(VERBOSE)
 
