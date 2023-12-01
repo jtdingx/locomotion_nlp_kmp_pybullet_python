@@ -42,6 +42,19 @@ class NLP:
     self.steplength[6, 0] = -0.05
     self.steplength[7, 0] = -0.05
     self.steplength[8, 0] = 0.05
+    self.steplength[13, 0] = 0.05    
+    self.steplength[14, 0] = 0
+    self.steplength[15, 0] = -0.05
+    self.steplength[16, 0] = -0.05
+    self.steplength[17, 0] = -0.05     
+
+    self.steplength[20, 0] = 0.15
+    self.steplength[21, 0] = 0.15 
+    self.steplength[22, 0] = 0.15 
+    # self.steplength[23, 0] = 0.0 
+    self.steplength[24, 0] = 0.0 
+    self.steplength[25, 0] = 0.0
+    self.steplength[26, 0] = 0.0 
 
     self.stepwidth = sy * np.ones([nstep, 1])
     self.stepwidth[0, 0] = self.stepwidth[0, 0] / 2
@@ -80,6 +93,10 @@ class NLP:
 
     ### reference walking period
     self.Ts = st * np.ones([nstep, 1])
+    self.Ts[12, 0] = 0.7
+    self.Ts[11, 0] = 0.7
+   
+
     self.Tx = np.zeros([nstep, 1])
 
     for i in range(1, nstep):

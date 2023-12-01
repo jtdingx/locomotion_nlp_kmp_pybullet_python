@@ -213,7 +213,7 @@ def main():
     Freebase = True
 
     ######### Coman: with/without forearm #####
-    Forearm = True
+    Forearm = False
 
     mesh_dirx = str(Path(__file__).parent.absolute())
     print(mesh_dirx)
@@ -229,8 +229,8 @@ def main():
             if Forearm:
                 urdf_filename = mesh_dir + 'iit-coman/model.urdf'
             else:
-                # urdf_filename = mesh_dir + 'iit-coman-no-forearms/model_jiatao.urdf'
-                urdf_filename = mesh_dir + 'iit-coman-no-forearms/model.urdf'
+                urdf_filename = mesh_dir + 'iit-coman-no-forearms-line-feet/model.urdf'
+                # urdf_filename = mesh_dir + 'iit-coman-no-forearms/model.urdf'
 
     else:
         if (robotname == 'Talos'):
@@ -308,6 +308,7 @@ def main():
     sim_rate = 200
     dt = 1. / sim_rate
     sim_env = SimEnv(sim_rate=sim_rate)
+    sim_env.resetCamera() 
 
     if (robotname == 'Talos'):
         urobtx = SimRobot(urdfFileName=urdf_filename,
@@ -395,7 +396,7 @@ def main():
             Homing_pose[10] = -0.2
 
     print("Homing_pose:", Homing_pose)
-    t_homing = 2
+    t_homing = 1
 
     useRealTimeSimulation = 0
     pybullet.setRealTimeSimulation(useRealTimeSimulation)
@@ -431,7 +432,7 @@ def main():
     #####################################################################################################33
     print("!!!!!!!!!!!!!!!!!!!!!!!Controller setup done!!!!!!!!!!!!!!!!!!!!!!!!!!")
     ############################ step parameters -----------------#################################################33
-    nstep = 30
+    nstep = 37
     dt_sample = dt
     dt_nlp = 0.025
     hcomx = 0.46 #0.5245
@@ -503,7 +504,7 @@ def main():
     support_flag = np.zeros([FileLength, 1])
     gcom_pre = [0, 0, 0]
 
-
+    idff = pybullet.addUserDebugParameter("Test force", -0.01, 0.01, 0)
 
     sim_env.resetCamera() 
     ############################################################################################# main loop for robot gait generation and control ##########################################
@@ -812,7 +813,19 @@ def main():
                 state_feedback[j, 33:36] = base_angle_m
                 # print('base_link_position:',base_pos_m)
                 # print('right_leg_sole_position:', right_sole_pos)
-                # print('left_leg_sole_position:', left_sole_pos)                
+                # print('left_leg_sole_position:', left_sole_pos) 
+                # 
+                # ##---------- add -----------
+                # if(j>=400 and j<=420):
+                #     ##----------add force to base link-----------------####
+                #     pend = [0,0,0]
+                #     pybullet.applyExternalForce(robotidx, -1, [100,0,0], pend, pybullet.WORLD_FRAME)
+                #     # ##----------add force to base link with debugline-----------------####
+                #     # pend = [0,1.1,0.1]
+                #     # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                #     # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                #     # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                                
 
             else:  ####routine2: set the based position in local framework(note that always zeros), transform the base function in the
                 des_pl = np.array([0.03 * abs(math.sin((t - t_homing) * 5 * math.pi / 180)),
@@ -877,7 +890,6 @@ def main():
             urobtx.setActuatedJointPositions(q_ik)
 
             ###########################===========================================================
-            #########################################################################################
 
         i += 1
 
