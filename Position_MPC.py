@@ -22,7 +22,7 @@ def generate_optimal_controller():
     
 
 
-    mass = 31
+    mass = 48.7
     grav = np.array([0,0,-9.81])
     g = 9.81
 
@@ -99,7 +99,7 @@ def generate_optimal_controller():
     #####-----position mpc
     R = cp.Parameter((m,m),name="R")
     R = .4*np.array([0.7,0.7,0.7,1.0,0.5,1.0])*np.eye(m) #
-    Q = 1*np.array([500,500,500,100,100,100,20,20,10,20,20,10])*np.eye(n)
+    Q = 1*np.array([200,200,100,200,200,200,20,20,10,20,20,20])*np.eye(n)
     Q_cmp = 1*np.array([50,50])*np.eye(n_cmp)
     cost = cp.sum_squares(Q@(X[:,1:N+1]-X_ref))+ cp.sum_squares(R@U) + cp.sum_squares(Q_cmp@(X_cmp[:,1:N+1]-L_ref))
 

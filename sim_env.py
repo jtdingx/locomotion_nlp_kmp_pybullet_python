@@ -109,7 +109,7 @@ class SimEnv:
     def reset(self):
         pass
 
-    def resetCamera(self, cameraDistance=1.5, cameraYaw=15, cameraPitch=-15, cameraTargetPosition=[0.5,0,0.5]):
+    def resetCamera(self, cameraDistance=1.5, cameraYaw=10, cameraPitch=-15, cameraTargetPosition=[1,0,0.5]):
         pybullet.resetDebugVisualizerCamera(cameraDistance=cameraDistance,
                                             cameraYaw=cameraYaw,
                                             cameraPitch=cameraPitch,

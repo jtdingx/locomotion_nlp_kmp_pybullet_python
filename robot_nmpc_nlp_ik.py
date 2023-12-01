@@ -432,14 +432,14 @@ def main():
     #####################################################################################################33
     print("!!!!!!!!!!!!!!!!!!!!!!!Controller setup done!!!!!!!!!!!!!!!!!!!!!!!!!!")
     ############################ step parameters -----------------#################################################33
-    nstep = 37
+    nstep = 38
     dt_sample = dt
     dt_nlp = 0.025
     hcomx = 0.46 #0.5245
     sx = 0.1
     sy = 0.1452
     sz = 0
-    st = 0.399
+    st = 0.499
     lift_height = 0.06
     falling_flag = 0
 
@@ -460,6 +460,7 @@ def main():
 
     com_fo_nlp =  NLP(nstep,dt_sample,dt_nlp,hcomx, sx,sy,sz,st,rleg_traj_refx, lleg_traj_refx, inDim, outDim, kh, lamda, pvFlag)
     outx = np.zeros([com_fo_nlp.Nsum, 12])
+    t_nlp = np.arange(0,com_fo_nlp.Nsum*dt_nlp,dt_nlp)
 
     #####################################################################################################33
     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!NLP-KMP-CLASS setup done!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -608,8 +609,27 @@ def main():
                 
 
                 j = i + 1- (int)(round(t_homing/dt)) #### current j-th step in the low-level control
+                
+                # state estimation 
+                base_quat = urobtx.getBaseCoMQuaternion()
+                base_com = urobtx.getBaseCoMPosition()
+                base_vel = urobtx.getBaseVelocityLinear()
+                base_angle_vel = urobtx.getBaseVelocityAngular()
+                q_mea = urobtx.getActuatedJointPositions() #+ add_noise*noise_level*noise_scales["q_mea"]*np.random.normal(-1.,1.,12)
+                dq_mea = urobtx.getActuatedJointVelocities() #+ add_noise*noise_level*noise_scales["dq_mea"]*np.random.normal(-1.,1.,12)
 
 
+                q_pin = np.hstack((np.array(base_com), base_quat, q_mea))
+                v_pin = np.hstack((np.array(base_vel), np.array(base_angle_vel), dq_mea))
+                
+
+                # # Compute centroidal inertia matrix using pinnochio
+                # # if self.compute_inertia == True:
+                pin.ccrba(robot.model, robot.data, q_pin, v_pin)
+                Ig = robot.data.Ig.inertia
+                # if(j%20==1):
+                #     print("Ig:",Ig)  
+                #     print("Landing_reference:",L_reference)
 
                 #############---------------------# MPC gait --------------------------########################
                 # cpptest = "/home/jiatao/Dropbox/nmpc_pybullet/build/src/MPC_WALK.exe"  # in linux without suffix .exe
@@ -634,11 +654,27 @@ def main():
                 # # xxx = Controller_ver.RotMatrixfromEuler(des_base_ori)
                 # # robot.model.jointPlacements[1] = pin.SE3(xxx, des_base)                
                 
+
+
+
                 ##----------------Mosek NLP gait generation --------------------###################
+                ### considering state feedback#################
+
+                state_com = np.zeros(8)
+                state_com[0] = base_pos_m[0]
+                state_com[1] = base_pos_m[1]
+                state_com[2] = base_vel[0]
+                state_com[3] = base_vel[1]
+                state_com[4] = right_sole_pos[0] #
+                state_com[5] = right_sole_pos[1]                
+                state_com[6] = left_sole_pos[0] #
+                state_com[7] = left_sole_pos[1]   
+
+
                 j_index = int(np.floor(
                     (j) / (com_fo_nlp.dt / com_fo_nlp.dtx)))  ####walking time fall into a specific optmization loop
                 if ((j_index >= 1) and (abs(j * com_fo_nlp.dtx - j_index * com_fo_nlp.dt) <= 0.8 * dt_sample)):
-                    res_outx = com_fo_nlp.nlp_nao(j_index)
+                    res_outx = com_fo_nlp.nlp_nao(j_index,state_com)
                     outx[j_index - 1, :] = res_outx
 
                 com_intex = com_fo_nlp.XGetSolution_CoM_position(j, dt_sample, j_index,mpc_horizon)
@@ -717,25 +753,7 @@ def main():
                         alpha_x = min((j-10)/100,0.5)
                         x_init = np.hstack(((1-alpha_x)*com_ref_det +alpha_x*com_feedback_det,(1-alpha_x)*angle_ref_det +alpha_x*angle_feedback_det,(1-alpha_x)*comv_ref_det +alpha_x*comv_feedback_det,(1-alpha_x)*angular_v_ref_det +alpha_x*angular_v_feedback_det))                 
 
-                base_quat = urobtx.getBaseCoMQuaternion()
-                base_com = urobtx.getBaseCoMPosition()
-                base_vel = urobtx.getBaseVelocityLinear()
-                base_angle_vel = urobtx.getBaseVelocityAngular()
-                q_mea = urobtx.getActuatedJointPositions() #+ add_noise*noise_level*noise_scales["q_mea"]*np.random.normal(-1.,1.,12)
-                dq_mea = urobtx.getActuatedJointVelocities() #+ add_noise*noise_level*noise_scales["dq_mea"]*np.random.normal(-1.,1.,12)
 
-
-                q_pin = np.hstack((np.array(base_com), base_quat, q_mea))
-                v_pin = np.hstack((np.array(base_vel), np.array(base_angle_vel), dq_mea))
-                
-
-                # # Compute centroidal inertia matrix using pinnochio
-                # # if self.compute_inertia == True:
-                pin.ccrba(robot.model, robot.data, q_pin, v_pin)
-                Ig = robot.data.Ig.inertia
-                # if(j%20==1):
-                #     print("Ig:",Ig)  
-                #     print("Landing_reference:",L_reference)
 
                 mpc_QP_problem.param_dict['L_ref'].value = L_reference
 
@@ -811,21 +829,114 @@ def main():
                 state_feedback[j, 27:30] = com_vel_m
                 state_feedback[j, 30:33] = com_feedback_det
                 state_feedback[j, 33:36] = base_angle_m
-                # print('base_link_position:',base_pos_m)
-                # print('right_leg_sole_position:', right_sole_pos)
-                # print('left_leg_sole_position:', left_sole_pos) 
                 # 
                 # ##---------- add -----------
-                # if(j>=400 and j<=420):
-                #     ##----------add force to base link-----------------####
-                #     pend = [0,0,0]
-                #     pybullet.applyExternalForce(robotidx, -1, [100,0,0], pend, pybullet.WORLD_FRAME)
-                #     # ##----------add force to base link with debugline-----------------####
-                #     # pend = [0,1.1,0.1]
-                #     # Fend = [pybullet.readUserDebugParameter(idff),0,0]
-                #     # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
-                #     # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
-                                
+                if(j>=400 and j<=420):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [320,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                
+                if(j>=600 and j<=620):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [-300,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+
+                if(j>=800 and j<=820):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [320,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+
+                if(j>=1000 and j<=1020):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [-300,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                                                         
+
+                if(j>=1200 and j<=1220):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [300,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                                  
+
+
+                if(j>=1400 and j<=1420):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [-300,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                            
+                if(j>=1600 and j<=1620):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [-250,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                           
+                if(j>=1800 and j<=1820):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [350,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                
+                if(j>=2400 and j<=2420):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [350,0,0], pend, pybullet.WORLD_FRAME)
+                    # ##----------add force to base link with debugline-----------------####
+                    # pend = [0,1.1,0.1]
+                    # Fend = [pybullet.readUserDebugParameter(idff),0,0]
+                    # pybullet.applyExternalForce(robotidx, -1, Fend, pend, pybullet.WORLD_FRAME)
+                    # pybullet.addUserDebugLine(pend, np.array(pend) + 100*np.array(Fend), lineColorRGB=[1,0,0],lifeTime=0.1,lineWidth=2)
+                
+                if(j>=2600 and j<=2620):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [350,0,0], pend, pybullet.WORLD_FRAME)
+                if(j>=2700 and j<=2720):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [-300,0,0], pend, pybullet.WORLD_FRAME)                                                                       
+                if(j>=2800 and j<=2820):
+                    ##----------add force to base link-----------------####
+                    pend = [0,0,0]
+                    pybullet.applyExternalForce(robotidx, 4, [350,0,0], pend, pybullet.WORLD_FRAME)  
+
 
             else:  ####routine2: set the based position in local framework(note that always zeros), transform the base function in the
                 des_pl = np.array([0.03 * abs(math.sin((t - t_homing) * 5 * math.pi / 180)),
@@ -962,8 +1073,7 @@ def main():
             # if SAVE_DATA:
             #     plt.savefig(fname + '/orientation_Trial_' + str(trial_num) + ".pdf",dpi=600, bbox_inches = "tight")            
 
-            #-------------------------# CoM plots: first layer NLP reference vs  second-layer MPC reference #-------------------------__#
-
+            #----# CoM plots: first layer NLP reference vs  second-layer MPC reference #-------------------------__#
             fig,axs3 = plt.subplots(3,constrained_layout=True,figsize=(6.5,7))
             plt.rcParams.update({'font.size': 14})
             axs3[0].plot(t_long,RLfoot_com_pos[6,:],'b',label="comx_nlp")
@@ -988,7 +1098,7 @@ def main():
             #     plt.savefig(fname + '/orientation_Trial_' + str(trial_num) + ".pdf",dpi=600, bbox_inches = "tight")
 
 
-            #-------------------------# body orientation plots: reference vs second-layer MPC vs feedback #-------------------------__#
+            #----- body orientation plots: reference vs second-layer MPC vs feedback #-------------------------__#
 
             fig,axs4 = plt.subplots(3,constrained_layout=True,figsize=(6.5,7))
             plt.rcParams.update({'font.size': 14})
@@ -1015,7 +1125,7 @@ def main():
             axs4[2].grid()
 
 
-            #-------------------------# mpc time #-------------------------__#
+            #-------------------------# mpc time #-------------------------#
 
             fig,axs4 = plt.subplots(2,constrained_layout=True,figsize=(6.5,7))
             plt.rcParams.update({'font.size': 14})
@@ -1024,19 +1134,48 @@ def main():
             axs4[0].legend(loc='upper left')
             axs4[0].grid()
 
-            # axs4[1].plot(t_long,RLfoot_com_pos[10,:],'g',label="pitch_ref")
-            # axs4[1].plot(t_long,mpc_qp_result[:,4],label="pitch_mpc")
-            # axs4[1].plot(t_long,state_feedback[:,34],label="pitch_real")
-            # axs4[1].set_xlabel('Time (s)', fontsize=12)
-            # axs4[1].legend(loc='upper left')
-            # axs4[1].grid()
+            ##--------- NLP gait parameters--------------------------------#
+            fig,axs5 = plt.subplots(2,constrained_layout=True,figsize=(6.5,7))
+            plt.rcParams.update({'font.size': 14})
+            axs5[0].plot(t_nlp,outx[:,0],'b',label="step length")
+            axs5[0].plot(t_nlp,outx[:,1],'g',label="step width")
+            axs5[0].set_xlabel('Time (s)', fontsize=12)
+            axs5[0].legend(loc='upper left')
+            axs5[0].grid()
 
-            # axs4[2].plot(t_long,RLfoot_com_pos[11,:],'g',label="rfootz")
-            # axs4[2].plot(t_long,mpc_qp_result[:,5],label="yaw_mpc")
-            # axs4[2].plot(t_long,state_feedback[:,35],label="yaw_real")
-            # axs4[2].set_xlabel('Time (s)', fontsize=12)
-            # axs4[2].legend(loc='upper left')
-            # axs4[2].grid()
+            axs5[1].plot(t_nlp,outx[:,2],'b',label="step cycle")
+            axs5[1].set_xlabel('Time (s)', fontsize=12)
+            axs5[1].legend(loc='upper left')
+            axs5[1].grid()
+
+            #-------leg: reference vs  estimation #-------------------------__#
+
+            fig,axs6 = plt.subplots(3,constrained_layout=True,figsize=(6.5,7))
+            plt.rcParams.update({'font.size': 14})
+            axs6[0].plot(t_long,RLfoot_com_pos[0,:],'g',label="rfootx")
+            axs6[0].plot(t_long,RLfoot_com_pos[3,:],'r',label="lfootx")
+            axs6[0].plot(t_long,state_feedback[:,3],label="rfootx_est")
+            axs6[0].plot(t_long,state_feedback[:,6],label="lfootx_est")
+
+            axs6[0].set_xlabel('Time (s)', fontsize=12)
+            axs6[0].legend(loc='upper left')
+            axs6[0].grid()
+
+            axs6[1].plot(t_long,RLfoot_com_pos[1,:],'g',label="rfooty")
+            axs6[1].plot(t_long,RLfoot_com_pos[4,:],'r',label="lfooty")
+            axs6[1].plot(t_long,state_feedback[:,4],label="rfooty_est")
+            axs6[1].plot(t_long,state_feedback[:,7],label="lfooty_est")
+            axs6[1].set_xlabel('Time (s)', fontsize=12)
+            axs6[1].legend(loc='upper left')
+            axs6[1].grid()
+
+            axs6[2].plot(t_long,RLfoot_com_pos[2,:],'g',label="rfootz")
+            axs6[2].plot(t_long,RLfoot_com_pos[5,:],'r',label="lfootz")
+            axs6[2].plot(t_long,state_feedback[:,5],label="rfootz_est")
+            axs6[2].plot(t_long,state_feedback[:,8],label="lfootz_est")
+            axs6[2].set_xlabel('Time (s)', fontsize=12)
+            axs6[2].legend(loc='upper left')
+            axs6[2].grid()
 
 
 

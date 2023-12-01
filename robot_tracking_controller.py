@@ -76,10 +76,10 @@ class Gait_Controller:
             left_sole_pos = list(pybullet.getLinkState(self.id, self.jointnumber - 8)[0])
             left_sole_pos[2] -= 0.00129
         else:
-            right_sole_pos = list(pybullet.getLinkState(self.id, self.jointnumber - 11)[0])
-            # right_sole_pos[2] -= -0.001
-            left_sole_pos = list(pybullet.getLinkState(self.id, self.jointnumber - 25)[0])
-            # left_sole_pos[2] -= -0.001
+            left_sole_pos = list(pybullet.getLinkState(self.id, self.jointnumber - 11)[0])
+            left_sole_pos[2] -= 0.09
+            right_sole_pos = list(pybullet.getLinkState(self.id, self.jointnumber - 25)[0])
+            right_sole_pos[2] -= 0.09
 
 
         base_angle = pybullet.getEulerFromQuaternion(base_orn)

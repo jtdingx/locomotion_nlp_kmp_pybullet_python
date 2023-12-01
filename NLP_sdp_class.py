@@ -37,24 +37,30 @@ class NLP:
     self.steplength = sx * np.ones([nstep, 1])
     self.steplength[0, 0] = 0
     self.steplength[1, 0] = sx/2
-    self.steplength[3, 0] = 0.15
-    self.steplength[5, 0] = 0.05
-    self.steplength[6, 0] = -0.05
-    self.steplength[7, 0] = -0.05
-    self.steplength[8, 0] = 0.05
-    self.steplength[13, 0] = 0.05    
-    self.steplength[14, 0] = 0
-    self.steplength[15, 0] = -0.05
-    self.steplength[16, 0] = -0.05
-    self.steplength[17, 0] = -0.05     
+    # self.steplength[3, 0] = 0.15
+    # self.steplength[5, 0] = 0.05
+    # self.steplength[6, 0] = -0.05
+    # self.steplength[7, 0] = -0.05
+    # self.steplength[8, 0] = 0.05
+    # self.steplength[13, 0] = 0.05    
+    # self.steplength[14, 0] = 0
+    # self.steplength[15, 0] = -0.05
+    # self.steplength[16, 0] = -0.05
+    # self.steplength[17, 0] = -0.05     
 
-    self.steplength[20, 0] = 0.15
-    self.steplength[21, 0] = 0.15 
-    self.steplength[22, 0] = 0.15 
-    # self.steplength[23, 0] = 0.0 
+    # self.steplength[20, 0] = 0.15
+    # self.steplength[21, 0] = 0.15 
+    # self.steplength[22, 0] = 0.15 
+    # # self.steplength[23, 0] = 0.0 
     self.steplength[24, 0] = 0.0 
     self.steplength[25, 0] = 0.0
     self.steplength[26, 0] = 0.0 
+    self.steplength[27, 0] = 0.0
+    self.steplength[28, 0] = 0.0 
+    self.steplength[29, 0] = 0.0 
+    self.steplength[30, 0] = -0.05 
+    self.steplength[31, 0] = -0.05 
+    self.steplength[32, 0] = -0.05 
 
     self.stepwidth = sy * np.ones([nstep, 1])
     self.stepwidth[0, 0] = self.stepwidth[0, 0] / 2
@@ -93,8 +99,8 @@ class NLP:
 
     ### reference walking period
     self.Ts = st * np.ones([nstep, 1])
-    self.Ts[12, 0] = 0.7
-    self.Ts[11, 0] = 0.7
+    # self.Ts[12, 0] = 0.7
+    # self.Ts[11, 0] = 0.7
    
 
     self.Tx = np.zeros([nstep, 1])
@@ -233,20 +239,23 @@ class NLP:
 
 
   # @fn_timer
-  def nlp_nao(self, i):
+  def nlp_nao(self, i,state_com):
       ### objective coefficients
       aax = 10000000
-      aay = 100000
-      aaxv = 50000
-      aayv = 1000
-      bbx = 100000000
-      bby = 100000000
-      rr1 = 10000000
-      rr2 = 10000000
+      aay = 1000000
+      aaxv = 80000
+      aayv = 50000
+      bbx = 10000000
+      bby = 10000000
+      rr1 = 100000000
+      rr2 = 100000000
+
+
+
 
       inf = 0.0
       ## LIPM model parameters
-      M_f = 31
+      M_f = 48
 
       Wn = np.sqrt(self.g / self.hcom)
       ##print(Wn)
@@ -265,8 +274,8 @@ class NLP:
 
       # constraints- bounddaries parameters initialization
       ## step time variation
-      t_min = 0.5
-      t_max = 1.5
+      t_min = 0.4
+      t_max = 1.0
 
       # swing foot maximal velocity
       footx_vmax = 1.5  # %%%%2*L_max/t_min = 0.3*2/0.4=1.5
@@ -678,18 +687,18 @@ class NLP:
       H2_q_xy[1, :, :] = trx12_lp2
       H1_q_xy[1, :] = trx12_lp1
       F_quadratci[1, :] = det_trx12_1p
-      H2_q_xy[2, :, :] = cp_x_up2
-      H1_q_xy[2, :] = cp_x_up1
-      F_quadratci[2, :] = det_cp_x_up
-      H2_q_xy[3, :, :] = cp_x_lp2
-      H1_q_xy[3, :] = cp_x_lp1
-      F_quadratci[3, :] = det_cp_x_lp
-      H2_q_xy[4, :, :] = cp_y_up2
-      H1_q_xy[4, :] = cp_y_up1
-      F_quadratci[4, :] = det_cp_y_up
-      H2_q_xy[5, :, :] = cp_y_lp2
-      H1_q_xy[5, :] = cp_y_lp1
-      F_quadratci[5, :] = det_cp_y_lp
+    #   H2_q_xy[2, :, :] = cp_x_up2
+    #   H1_q_xy[2, :] = cp_x_up1
+    #   F_quadratci[2, :] = det_cp_x_up
+    #   H2_q_xy[3, :, :] = cp_x_lp2
+    #   H1_q_xy[3, :] = cp_x_lp1
+    #   F_quadratci[3, :] = det_cp_x_lp
+    #   H2_q_xy[4, :, :] = cp_y_up2
+    #   H1_q_xy[4, :] = cp_y_up1
+    #   F_quadratci[4, :] = det_cp_y_up
+    #   H2_q_xy[5, :, :] = cp_y_lp2
+    #   H1_q_xy[5, :] = cp_y_lp1
+    #   F_quadratci[5, :] = det_cp_y_lp
 
       Nh = 6
       cin_quad = self.fun_sdr_quadratic_constraint(H2_q_xy, H1_q_xy, Nh, nt_rea)
@@ -795,10 +804,12 @@ class NLP:
                       X_vacc_k[0, 0] = self.footx_ref[k, 0] - self.footx_ref[k - 1, 0]
                       X_vacc_k[1, 0] = self.footy_ref[k, 0] - self.footy_ref[k - 1, 0]
                   else:
-                      print('No optimal solutin using mosek!!!\n')
+                      print('----No optimal solution using mosek!!!---using the reference---\n')
                       X_vacc_k = copy.deepcopy(vari_ini)
                       X_vacc_k[0, 0] = self.footx_ref[k, 0] - self.footx_ref[k - 1, 0]
                       X_vacc_k[1, 0] = self.footy_ref[k, 0] - self.footy_ref[k - 1, 0]
+                      X_vacc_k[2, 0] = tr1_ref
+                      X_vacc_k[3, 0] = tr2_ref        
       else:
           X_vacc_k = copy.deepcopy(vari_ini)
           X_vacc_k[0, 0] = self.footx_ref[k, 0] - self.footx_ref[k - 1, 0]
@@ -861,39 +872,36 @@ class NLP:
       ############################################################################
       ### state feedback ############
       # % % % external disturbances
-      self.comx_feed[i, 0] = self.comx[i, 0]
-      self.comvx_feed[i, 0] = self.comvx[i, 0]
-      self.comax_feed[i, 0] = self.comax[i, 0]
-      self.comy_feed[i, 0] = self.comy[i, 0]
-      self.comvy_feed[i, 0] = self.comvy[i, 0]
+      lamd = 0.00
+      support_real = np.zeros(2)
+      bjx1 = self.index_find(i + 1, self.Tx, 0)
+      if (bjx1 >= 2): ###
+        lamd = 0.4
+        if ((bjx1 % 2) == 0):  ##singular number: left support
+            support_real[0] = state_com[6]
+            support_real[1] = state_com[7]
+        else:
+            support_real[0] = state_com[4]
+            support_real[1] = state_com[5]
+      
+      lamd *= (1- max(min(pow((TK - self.Ts[bjx1,:]/2)/(self.Ts[bjx1,:]/2),4),1),0))
+    #   print("lamda:",lamd)
+
+
+    
+
+    #   self.comx_feed[i, 0] = (1-lamd)*self.comx[i, 0] + lamd*(state_com[0] - support_real[0]+self.px[i, 0])
+    #   self.comy_feed[i, 0] = (1-lamd)*self.comy[i, 0] + lamd*(state_com[1] - support_real[1]+self.py[i, 0])
+      self.comx_feed[i, 0] = (1-0)*self.comx[i, 0] + 0*(state_com[0] - support_real[0]+self.px[i, 0])
+      self.comy_feed[i, 0] = (1-0)*self.comy[i, 0] + 0*(state_com[1] - support_real[1]+self.py[i, 0])
+
+    #   self.comx_feed[i, 0] = (1-0.001*lamd)*self.comx[i, 0] + 0.001*lamd*(state_com[0])
+    #   self.comy_feed[i, 0] = (1-0.001*lamd)*self.comy[i, 0] + 0.001*lamd*(state_com[1]) 
+
+      self.comvx_feed[i, 0] = (1-lamd)*self.comvx[i, 0] + lamd*state_com[2]
+      self.comax_feed[i, 0] = self.comax[i, 0]      
+      self.comvy_feed[i, 0] = (1-lamd)*self.comvy[i, 0]+ lamd*state_com[3]
       self.comay_feed[i, 0] = self.comay[i, 0]
-
-      # if ((i==101) or (i==102) or (i==103)):
-      #   if (i == 103):
-      #     self.comx_feed[i,0] = comx[i,0] + det_xp / 4
-      #     self.comvx_feed[i,0] = comvx[i,0] + det_xv / 2
-      #     self.comy_feed[i,0] = comy[i,0] + det_yp / 4
-      #     self.comvy_feed[i,0] = comvy[i,0] + det_yv / 2
-      #   else:
-      #     self.comx_feed[i,0] = comx[i,0] + det_xp / 2
-      #     self.comvx_feed[i,0] = comvx[i,0] + det_xv * 1.5
-      #     self.comy_feed[i,0] = comy[i,0] + det_yp / 2
-      #     self.comvy_feed[i,0] = comvy[i,0] + det_yv * 1.5
-      # else:
-      #   if (i==40) or (i==41) or (i==42):
-      #     if (i == 42):
-      #       self.comx_feed[i,0] = comx[i,0] - det_xp / 4
-      #       self.comvx_feed[i,0] = comvx[i,0] - det_xv / 2
-      #       self.comy_feed[i,0] = comy[i,0] - det_yp / 4
-      #       self.comvy_feed[i,0] = comvy[i,0] - det_yv / 2
-      #     else:
-      #       self.comx_feed[i,0] = comx[i,0] - det_xp / 2
-      #       self.comvx_feed[i,0] = comvx[i,0] - det_xv / 2
-      #       self.comy_feed[i,0] = comy[i,0] - det_yp / 2
-      #       self.comvy_feed[i,0] = comvy[i,0] - det_yv / 2
-
-      # time_end = time.time()
-      # # print('self.footx_ref:\n', self.footx_ref)
 
       self.CoM_height(i)
 
